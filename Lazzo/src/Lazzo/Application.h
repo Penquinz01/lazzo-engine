@@ -9,5 +9,7 @@ namespace Lazzo
 		Application();
 		~Application();
 		void Run();
+
 	};
+	Application* CreateApplication();
 }

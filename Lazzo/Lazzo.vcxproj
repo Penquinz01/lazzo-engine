@@ -81,8 +81,10 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Lazzo.h" />
     <ClInclude Include="src\Lazzo\Application.h" />
     <ClInclude Include="src\Lazzo\Core.h" />
+    <ClInclude Include="src\Lazzo\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp" />

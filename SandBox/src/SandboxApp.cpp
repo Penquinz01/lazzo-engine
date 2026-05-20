@@ -1,7 +1,7 @@
 #include <Lazzo.h>
 
 class SandBox : public Lazzo::Application {
-	public:
+public:
 	SandBox() {
 	}
 	~SandBox() {
@@ -9,8 +9,6 @@ class SandBox : public Lazzo::Application {
 };
 
 
-void main(){
-	SandBox* app = new SandBox();
-	app->Run();
-	delete app;
+Lazzo::Application* Lazzo::CreateApplication() {
+	return new SandBox();
 }

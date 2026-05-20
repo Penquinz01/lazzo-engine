@@ -1,4 +1,2 @@
-﻿  Application.cpp
-\src\Application.cpp(1,1): error C1083: Cannot open source file: 'src\Application.cpp': No such file or directory
-  (compiling source file '/src/Application.cpp')
-  
+﻿  SandboxApp.cpp
+  SandBox.vcxproj -> C:\dev\engine\Lazzo\bin\Debug-x64\SandBox\SandBox.exe
