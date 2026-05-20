@@ -1,11 +1,11 @@
 #pragma once
 
 #ifdef LZ_PLATFORM_WINDOWS
-	#ifdef LZ_BUILD_DLL
-		#define LZ_API __declspec(dllexport)
+	#ifndef LZ_BUILD_DLL
+		#define LAZZO_API __declspec(dllimport)
 	#else
-		#define LZ_API __declspec(dllimport)
-	#endif 
-#else 
+		#define LAZZO_API __declspec(dllexport)
+	#endif
+#else
 	#error Lazzo only supports Windows!
 #endif

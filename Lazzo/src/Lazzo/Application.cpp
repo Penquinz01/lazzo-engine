@@ -1,14 +1,15 @@
 #include "Application.h"
 
-namespace Lazzo {
-	Application::Application() {
-
+namespace Lazzo
+{
+	Application::Application()
+	{
 	}
-	Application::~Application() {
-
+	Application::~Application()
+	{
 	}
-
-	void Application::Run() {
+	void Application::Run()
+	{
 		while (true);
 	}
 }

@@ -1,11 +1,13 @@
 #pragma once
 
-namespace Lazzo {
-	class __declspec(dllexport) Application {
-	public:
-		Application();
-		virtual ~Application();
+#include "Core.h"
 
+namespace Lazzo
+{
+	class LAZZO_API Application {
+		public:
+		Application();
+		~Application();
 		void Run();
 	};
 }
