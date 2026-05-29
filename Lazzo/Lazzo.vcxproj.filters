@@ -19,6 +19,10 @@
     <ClInclude Include="src\Lazzo\Log.h">
       <Filter>Lazzo</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Events\Event.h" />
+    <ClInclude Include="src\Lazzo\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Lazzo\Events\KeyEvent.h" />
+    <ClInclude Include="src\Lazzo\Events\MouseEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
