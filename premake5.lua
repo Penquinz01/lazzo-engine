@@ -7,6 +7,8 @@ configurations {
     "Dist"
 }
 
+SDL3_DIR = "Lazzo/vendor/SDL3"
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 project "Lazzo"
     location "Lazzo"
@@ -28,7 +30,14 @@ includedirs {
     "%{prj.name}/src",
     "%{prj.name}/vendor/spdlog/include",
     "%{prj.name}/vendor/SDL3/include",
-    "%{prj.name}/vendor/glad/include"
+    "%{prj.name}/vendor/glad/include",
+}
+libdirs{
+    "%{SDL3_DIR}/lib/x64",
+}
+
+links{
+    "SDL3",
 }
 
 filter "system:windows"
@@ -45,7 +54,8 @@ defines {
 }
 
 postbuildcommands {
-    ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+    ('{COPY} "%{cfg.buildtarget.abspath}" "%{wks.location}/bin/' .. outputdir .. '/Sandbox"'),
+    ('{COPY} "%{wks.location}/%{SDL3_DIR}/lib/x64/SDL3.dll" "%{wks.location}/bin/' .. outputdir .. '/Sandbox"')
 }
 
 
@@ -76,10 +86,11 @@ project "SandBox"
     includedirs {
         "%{prj.name}/../Lazzo/vendor/spdlog/include",
         "%{prj.name}/../Lazzo/vendor/SDL3/include",
-        "Lazzo/src"
+        "Lazzo/src",
     }
     links{
-        "Lazzo"
+        "Lazzo",
+        "opengl32",
     }
 
     filter "system:windows"

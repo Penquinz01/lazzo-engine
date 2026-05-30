@@ -37,7 +37,7 @@
     <ClInclude Include="src\Lazzo\Log.h">
       <Filter>Lazzo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lazzo\Window\sdl.h">
+    <ClInclude Include="src\Lazzo\Window\Window.h">
       <Filter>Lazzo\Window</Filter>
     </ClInclude>
     <ClInclude Include="src\lzpch.h" />
@@ -49,7 +49,7 @@
     <ClCompile Include="src\Lazzo\Log.cpp">
       <Filter>Lazzo</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lazzo\Window\sdl.cpp">
+    <ClCompile Include="src\Lazzo\Window\Window.cpp">
       <Filter>Lazzo\Window</Filter>
     </ClCompile>
     <ClCompile Include="src\lzpch.cpp" />

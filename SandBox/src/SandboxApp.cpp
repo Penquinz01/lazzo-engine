@@ -1,3 +1,4 @@
+#include "lzpch.h"
 #include <Lazzo.h>
 
 class SandBox : public Lazzo::Application {

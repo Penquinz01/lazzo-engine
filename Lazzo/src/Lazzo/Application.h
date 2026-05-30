@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "Window/Window.h"
 
 namespace Lazzo
 {
@@ -10,6 +11,9 @@ namespace Lazzo
 		~Application();
 		void Run();
 
+	private:
+		std::unique_ptr<SDLWindow> window{};
+		bool running = true;
 	};
 	Application* CreateApplication();
 }

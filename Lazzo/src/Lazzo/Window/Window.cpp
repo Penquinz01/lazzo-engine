@@ -1,6 +1,9 @@
+#include "lzpch.h"
+
 #include "Window.h"
 #include "Lazzo/Log.h"
-#include <glad.h>
+#include <glad/glad.h>
+#include "Events/Events.h"
 
 namespace Lazzo {
 	SDLWindow::SDLWindow(const char* title, int width, int height) {
@@ -12,5 +15,28 @@ namespace Lazzo {
 		}
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);
+	}
+	SDLWindow::~SDLWindow()
+	{
+		SDL_DestroyRenderer(m_Renderer);
+		SDL_DestroyWindow(m_Window);	
+	}
+
+	bool SDLWindow::OnUpdate() {
+		SDL_PollEvent(&event);
+		if (event.type == SDL_EVENT_QUIT) {
+			return false;
+		}
+		switch (event.type) {
+			case SDL_EVENT_KEY_DOWN:
+				KeyDownEvent keyDownEvent(event);
+				if (keyDownEvent.ReturnScanCode() == SDL_SCANCODE_ESCAPE) {
+					return false;
+				}
+				LZ_TRACE("Key Down Event: %d", keyDownEvent.ReturnScanCode());
+				break;
+
+		}
+		return true;
 	}
 }
