@@ -16,6 +16,9 @@ project "Lazzo"
 targetdir("bin/" .. outputdir .. "/%{prj.name}")
 objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+pchheader "lzpch.h"
+pchsource "Lazzo/src/lzpch.cpp"
+
 files {
     "%{prj.name}/src/**.h",
     "%{prj.name}/src/**.cpp"
@@ -23,7 +26,9 @@ files {
 
 includedirs {
     "%{prj.name}/src",
-    "%{prj.name}/vendor/spdlog/include"
+    "%{prj.name}/vendor/spdlog/include",
+    "%{prj.name}/vendor/SDL3/include",
+    "%{prj.name}/vendor/glad/include"
 }
 
 filter "system:windows"
@@ -70,6 +75,7 @@ project "SandBox"
 
     includedirs {
         "%{prj.name}/../Lazzo/vendor/spdlog/include",
+        "%{prj.name}/../Lazzo/vendor/SDL3/include",
         "Lazzo/src"
     }
     links{

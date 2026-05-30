@@ -2,8 +2,7 @@
 
 #include "Lazzo/Core.h"
 
-#include <string>
-#include <functional>
+
 
 namespace Lazzo {
 	enum class EventType {

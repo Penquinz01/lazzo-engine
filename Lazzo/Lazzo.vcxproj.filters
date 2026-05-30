@@ -4,6 +4,12 @@
     <Filter Include="Lazzo">
       <UniqueIdentifier>{558E950D-C1A2-BDBE-8A24-611EF6F7B9EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lazzo\Events">
+      <UniqueIdentifier>{99285B15-858B-EAB9-2E11-23701A53B63C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lazzo\Window">
+      <UniqueIdentifier>{9C89713E-88EC-00E3-3172-39991DB4CC65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Lazzo.h" />
@@ -16,13 +22,25 @@
     <ClInclude Include="src\Lazzo\EntryPoint.h">
       <Filter>Lazzo</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Events\ApplicationEvent.h">
+      <Filter>Lazzo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Events\Event.h">
+      <Filter>Lazzo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Events\KeyEvent.h">
+      <Filter>Lazzo\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Events\MouseEvent.h">
+      <Filter>Lazzo\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Log.h">
       <Filter>Lazzo</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lazzo\Events\Event.h" />
-    <ClInclude Include="src\Lazzo\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Lazzo\Events\KeyEvent.h" />
-    <ClInclude Include="src\Lazzo\Events\MouseEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\sdl.h">
+      <Filter>Lazzo\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lzpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
@@ -31,5 +49,9 @@
     <ClCompile Include="src\Lazzo\Log.cpp">
       <Filter>Lazzo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\sdl.cpp">
+      <Filter>Lazzo\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lzpch.cpp" />
   </ItemGroup>
 </Project>
