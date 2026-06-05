@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LZ_PLATFORM_WINDOWS;LZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Lazzo\vendor\spdlog\include;..\Lazzo\vendor\SDL3\include;..\Lazzo\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Lazzo\vendor\spdlog\include;..\Lazzo\vendor\SDL3\include;..\Lazzo\vendor\imgui;..\Lazzo\vendor\imgui\backends;..\Lazzo\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -100,7 +100,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LZ_PLATFORM_WINDOWS;LZ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Lazzo\vendor\spdlog\include;..\Lazzo\vendor\SDL3\include;..\Lazzo\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Lazzo\vendor\spdlog\include;..\Lazzo\vendor\SDL3\include;..\Lazzo\vendor\imgui;..\Lazzo\vendor\imgui\backends;..\Lazzo\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -125,7 +125,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LZ_PLATFORM_WINDOWS;LZ_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Lazzo\vendor\spdlog\include;..\Lazzo\vendor\SDL3\include;..\Lazzo\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Lazzo\vendor\spdlog\include;..\Lazzo\vendor\SDL3\include;..\Lazzo\vendor\imgui;..\Lazzo\vendor\imgui\backends;..\Lazzo\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

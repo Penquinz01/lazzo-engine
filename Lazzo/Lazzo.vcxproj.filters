@@ -1,57 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Lazzo">
-      <UniqueIdentifier>{558E950D-C1A2-BDBE-8A24-611EF6F7B9EF}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lazzo\Events">
-      <UniqueIdentifier>{99285B15-858B-EAB9-2E11-23701A53B63C}</UniqueIdentifier>
+    <Filter Include="src\Lazzo">
+      <UniqueIdentifier>{AC9C52B3-1807-072A-6145-B8CFCDEEE47E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lazzo\Window">
-      <UniqueIdentifier>{9C89713E-88EC-00E3-3172-39991DB4CC65}</UniqueIdentifier>
+    <Filter Include="src\Lazzo\Window">
+      <UniqueIdentifier>{13309251-FF28-B1A3-285B-962814B390AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lazzo\Window\Events">
+      <UniqueIdentifier>{97A89445-03E0-DCDC-0CEA-400078A003D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glad">
+      <UniqueIdentifier>{9A8E79C1-0644-F2B6-8F38-EC8DFBECE8BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glad\src">
+      <UniqueIdentifier>{B1098FEA-1D95-FCAE-26A6-7FA392B058AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\imgui">
+      <UniqueIdentifier>{5D3BD0F0-499E-5F95-F223-984BDE652B18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\imgui\backends">
+      <UniqueIdentifier>{27CEAEAF-933A-6AAA-5C2E-0208C8598C12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Lazzo.h" />
+    <ClInclude Include="src\Lazzo.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Application.h">
-      <Filter>Lazzo</Filter>
+      <Filter>src\Lazzo</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Core.h">
-      <Filter>Lazzo</Filter>
+      <Filter>src\Lazzo</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\EntryPoint.h">
-      <Filter>Lazzo</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lazzo\Events\ApplicationEvent.h">
-      <Filter>Lazzo\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lazzo\Events\Event.h">
-      <Filter>Lazzo\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lazzo\Events\KeyEvent.h">
-      <Filter>Lazzo\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Lazzo\Events\MouseEvent.h">
-      <Filter>Lazzo\Events</Filter>
+      <Filter>src\Lazzo</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Log.h">
-      <Filter>Lazzo</Filter>
+      <Filter>src\Lazzo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\Events\Event.h">
+      <Filter>src\Lazzo\Window\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\Events\Events.h">
+      <Filter>src\Lazzo\Window\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\Events\KeyDownEvent.h">
+      <Filter>src\Lazzo\Window\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Window\Window.h">
-      <Filter>Lazzo\Window</Filter>
+      <Filter>src\Lazzo\Window</Filter>
     </ClInclude>
-    <ClInclude Include="src\lzpch.h" />
+    <ClInclude Include="src\lzpch.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
-      <Filter>Lazzo</Filter>
+      <Filter>src\Lazzo</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Log.cpp">
-      <Filter>Lazzo</Filter>
+      <Filter>src\Lazzo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp">
+      <Filter>src\Lazzo\Window\Events</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Window\Window.cpp">
-      <Filter>Lazzo\Window</Filter>
+      <Filter>src\Lazzo\Window</Filter>
     </ClCompile>
-    <ClCompile Include="src\lzpch.cpp" />
+    <ClCompile Include="src\lzpch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\glad\src\glad.c">
+      <Filter>vendor\glad\src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_opengl3.cpp">
+      <Filter>vendor\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_sdl3.cpp">
+      <Filter>vendor\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
+      <Filter>vendor\imgui</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

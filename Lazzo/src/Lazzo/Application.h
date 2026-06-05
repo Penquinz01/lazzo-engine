@@ -12,7 +12,7 @@ namespace Lazzo
 		void Run();
 
 	private:
-		std::unique_ptr<SDLWindow> window{};
+		std::unique_ptr<Window> window{};
 		bool running = true;
 	};
 	Application* CreateApplication();
