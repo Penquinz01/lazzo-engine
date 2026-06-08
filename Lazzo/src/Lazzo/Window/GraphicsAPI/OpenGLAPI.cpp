@@ -1,3 +1,5 @@
+#include "lzpch.h"
+
 #include "OpenGLAPI.h"
 #pragma once
 

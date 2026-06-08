@@ -16,13 +16,20 @@ namespace Lazzo
 		~Window();
 		bool OnUpdate();
 	private:
-    std::unique_ptr<SDL_Window> m_Window{ nullptr };
+		struct DeleteWindow {
+			void operator()(SDL_Window* window) {
+				SDL_DestroyWindow(window);
+			}
+		};
+    std::unique_ptr<SDL_Window, DeleteWindow> m_Window{ nullptr };
     SDL_GLContext gl_context{};
     GraphicAPI m_GraphicBackend{ GraphicAPI::OpenGL };
 
 		GraphicAPI ChooseGraphicBackend();
 		float mainScale;
 		//ImGuiIO* io{nullptr};
+
+		
 
 #pragma region testIMGUI
 		bool show_demo_window{ true };

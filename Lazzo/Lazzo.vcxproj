@@ -175,6 +175,10 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\Lazzo\Window\Events\Event.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Events.h" />
     <ClInclude Include="src\Lazzo\Window\Events\KeyDownEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\GraphicsAPI.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsFactory.h" />
+    <ClInclude Include="src\Lazzo\Window\UI\ImguiUI.h" />
     <ClInclude Include="src\Lazzo\Window\Window.h" />
     <ClInclude Include="src\lzpch.h" />
   </ItemGroup>
@@ -182,6 +186,8 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClCompile Include="src\Lazzo\Application.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp" />
+    <ClCompile Include="src\Lazzo\Window\UI\ImguiUI.cpp" />
     <ClCompile Include="src\Lazzo\Window\Window.cpp" />
     <ClCompile Include="src\lzpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

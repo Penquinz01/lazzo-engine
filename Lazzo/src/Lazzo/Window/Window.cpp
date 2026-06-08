@@ -15,7 +15,12 @@ namespace Lazzo {
 		if(m_GraphicBackend == GraphicAPI::OpenGL) {
 			
 			mainScale = SDL_GetDisplayContentScale(SDL_GetPrimaryDisplay());
-      m_Window = std::make_unique<SDL_Window>(SDL_CreateWindow(title,width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE));
+			m_Window = std::unique_ptr<SDL_Window, DeleteWindow>(
+				SDL_CreateWindow(title,
+					width,
+					height,
+					SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL)
+			);
 			if (m_Window == nullptr) {
 				printf("Error: SDL_CreateWindow(): %s\n", SDL_GetError());
 				return;
