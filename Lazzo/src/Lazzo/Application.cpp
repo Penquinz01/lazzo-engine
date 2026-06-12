@@ -16,10 +16,6 @@ namespace Lazzo
 	}
 	void Application::Run()
 	{
-		while (running) {
-			if (!window->OnUpdate()) {
-				running = false;
-			}
-		}
+    window->OnUpdate();
 	}
 }

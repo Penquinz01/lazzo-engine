@@ -109,6 +109,7 @@ files {
 includedirs {
     "%{prj.name}/../Lazzo/vendor/spdlog/include",
     "%{prj.name}/../Lazzo/vendor/SDL3/include",
+    "%{prj.name}/../Lazzo/vendor/glad/include",
     "%{Inc_Dir.ImGui}/",
     "%{Inc_Dir.ImGui}/backends",
     "Lazzo/src",

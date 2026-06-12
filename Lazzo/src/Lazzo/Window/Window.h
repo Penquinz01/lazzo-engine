@@ -4,29 +4,30 @@
 #include "imgui_impl_sdl3.h"
 #include "imgui_impl_opengl3.h"
 #include "GraphicsAPI/GraphicsAPI.h"
+#include "UI/ImguiUI.h"
 
 namespace Lazzo
 {
-	
-
+	struct DeleteWindow {
+		void operator()(SDL_Window* window) {
+			SDL_DestroyWindow(window);
+		}
+	};
 	class Window {
 	public:
+    std::unique_ptr<SDL_Window, DeleteWindow> m_Window{ nullptr };
 		SDL_Event event{};
 		Window(const char* title, int width, int height);
 		~Window();
 		bool OnUpdate();
 	private:
-		struct DeleteWindow {
-			void operator()(SDL_Window* window) {
-				SDL_DestroyWindow(window);
-			}
-		};
-    std::unique_ptr<SDL_Window, DeleteWindow> m_Window{ nullptr };
     SDL_GLContext gl_context{};
     GraphicAPI m_GraphicBackend{ GraphicAPI::OpenGL };
+		std::unique_ptr<ImguiUI> m_ImguiUI;
+
+    std::unique_ptr<GraphicsAPI> m_GraphicsAPI;
 
 		GraphicAPI ChooseGraphicBackend();
-		float mainScale;
 		//ImGuiIO* io{nullptr};
 
 		

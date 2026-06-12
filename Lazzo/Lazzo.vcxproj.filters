@@ -13,6 +13,12 @@
     <Filter Include="src\Lazzo\Window\Events">
       <UniqueIdentifier>{97A89445-03E0-DCDC-0CEA-400078A003D6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lazzo\Window\GraphicsAPI">
+      <UniqueIdentifier>{EDE34A7A-D99E-3A26-8256-B3706EF084B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lazzo\Window\UI">
+      <UniqueIdentifier>{606EAFDA-CCCF-8CE8-553D-D39AC19DC3A7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -54,6 +60,18 @@
     <ClInclude Include="src\Lazzo\Window\Events\KeyDownEvent.h">
       <Filter>src\Lazzo\Window\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\GraphicsAPI.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsFactory.h">
+      <Filter>src\Lazzo\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\UI\ImguiUI.h">
+      <Filter>src\Lazzo\Window\UI</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Window\Window.h">
       <Filter>src\Lazzo\Window</Filter>
     </ClInclude>
@@ -70,6 +88,12 @@
     </ClCompile>
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp">
       <Filter>src\Lazzo\Window\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\UI\ImguiUI.cpp">
+      <Filter>src\Lazzo\Window\UI</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Window\Window.cpp">
       <Filter>src\Lazzo\Window</Filter>
