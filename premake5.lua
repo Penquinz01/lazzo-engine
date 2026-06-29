@@ -10,6 +10,7 @@ configurations {
 SDL3_DIR = "Lazzo/vendor/SDL3"
 Inc_Dir = {}
 Inc_Dir["ImGui"] = "Lazzo/vendor/imgui"
+Inc_Dir["Assimp"] = "Lazzo/vendor/assimp"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 project "Lazzo"
@@ -35,7 +36,6 @@ files {
     "%{Inc_Dir.ImGui}/imgui_widgets.cpp",
     "%{Inc_Dir.ImGui}/backends/imgui_impl_sdl3.cpp",
     "%{Inc_Dir.ImGui}/backends/imgui_impl_opengl3.cpp",
-
 }
 filter { "files:Lazzo/vendor/imgui/**.cpp" }
 enablepch "Off"
@@ -52,11 +52,14 @@ includedirs {
     "%{prj.name}/vendor/SDL3/include",
     "%{prj.name}/vendor/glad/include",
     "%{Inc_Dir.ImGui}/",
-    "%{Inc_Dir.ImGui}/backends"
+    "%{Inc_Dir.ImGui}/backends",
+    "%{Inc_Dir.Assimp}/include",
+
 
 }
 libdirs {
     "%{SDL3_DIR}/lib/x64",
+    "%{Inc_Dir.Assimp}/lib/Release",
 }
 
 links {
