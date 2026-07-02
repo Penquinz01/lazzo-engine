@@ -78,6 +78,8 @@
     <ClInclude Include="src\lzpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Layers\Layer.h" />
+    <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
@@ -122,5 +124,7 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
       <Filter>vendor\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
+    <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
   </ItemGroup>
 </Project>

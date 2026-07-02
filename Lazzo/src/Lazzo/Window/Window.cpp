@@ -40,7 +40,7 @@ namespace Lazzo {
 		while (true) {
 			while (SDL_PollEvent(&event))
 			{
-        m_ImguiUI->ProcessEvent(event);
+				m_ImguiUI->ProcessEvent(event);
 				if (event.type == SDL_EVENT_QUIT) {
 					return false;
 				}

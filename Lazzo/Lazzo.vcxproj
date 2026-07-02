@@ -167,10 +167,12 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
     <ClInclude Include="src\Lazzo.h" />
     <ClInclude Include="src\Lazzo\Application.h" />
     <ClInclude Include="src\Lazzo\Core.h" />
     <ClInclude Include="src\Lazzo\EntryPoint.h" />
+    <ClInclude Include="src\Lazzo\Layers\Layer.h" />
     <ClInclude Include="src\Lazzo\Log.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Event.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Events.h" />
@@ -183,7 +185,9 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\lzpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Lazzo\Application.cpp" />
+    <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp" />

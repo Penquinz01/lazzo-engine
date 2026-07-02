@@ -9,6 +9,7 @@ namespace Lazzo
 	{
 		window = std::make_unique<Window>("Lazzo Engine", 1280, 720);
 		running = true;
+        m_LayerStack = LayerStack();
 	}
 	Application::~Application()
 	{
@@ -16,6 +17,15 @@ namespace Lazzo
 	}
 	void Application::Run()
 	{
-    window->OnUpdate();
+		window->OnUpdate();
 	}
+    void Application::PushLayer(Layer* layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+    void Application::PushOverlay(Layer* overlay)
+    {
+        m_LayerStack.PushOverlay(overlay);
+    }
+
 }
