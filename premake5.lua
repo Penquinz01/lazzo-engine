@@ -1,4 +1,5 @@
 workspace "Lazzo"
+startproject "SandBox"
 architecture "x64"
 
 configurations {

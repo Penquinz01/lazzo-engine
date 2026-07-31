@@ -7,6 +7,6 @@
   </Configurations>
   <Project Path="Lazzo\Lazzo.vcxproj" Id="558E950D-C1A2-BDBE-8A24-611EF6F7B9EF">
   </Project>
-  <Project Path="SandBox\SandBox.vcxproj" Id="D43924E3-4019-A37E-4931-2E55B58F09E0">
+  <Project Path="SandBox\SandBox.vcxproj" Id="D43924E3-4019-A37E-4931-2E55B58F09E0" DefaultStartup="true">
   </Project>
 </Solution>

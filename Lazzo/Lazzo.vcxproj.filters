@@ -7,6 +7,9 @@
     <Filter Include="src\Lazzo">
       <UniqueIdentifier>{AC9C52B3-1807-072A-6145-B8CFCDEEE47E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lazzo\Layers">
+      <UniqueIdentifier>{EBB95E37-D7B2-7D89-00E5-620EEC3C5D95}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lazzo\Window">
       <UniqueIdentifier>{13309251-FF28-B1A3-285B-962814B390AF}</UniqueIdentifier>
     </Filter>
@@ -48,6 +51,12 @@
     <ClInclude Include="src\Lazzo\EntryPoint.h">
       <Filter>src\Lazzo</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Layers\Layer.h">
+      <Filter>src\Lazzo\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Layers\LayerStack.h">
+      <Filter>src\Lazzo\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Log.h">
       <Filter>src\Lazzo</Filter>
     </ClInclude>
@@ -78,12 +87,16 @@
     <ClInclude Include="src\lzpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lazzo\Layers\Layer.h" />
-    <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
       <Filter>src\Lazzo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Layers\Layer.cpp">
+      <Filter>src\Lazzo\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp">
+      <Filter>src\Lazzo\Layers</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Log.cpp">
       <Filter>src\Lazzo</Filter>
@@ -124,7 +137,5 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
       <Filter>vendor\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
-    <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
   </ItemGroup>
 </Project>
