@@ -12,6 +12,7 @@ SDL3_DIR = "Lazzo/vendor/SDL3"
 Inc_Dir = {}
 Inc_Dir["ImGui"] = "Lazzo/vendor/imgui"
 Inc_Dir["Assimp"] = "Lazzo/vendor/assimp"
+Inc_Dir["glm"] = "Lazzo/vendor/glm"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 project "Lazzo"
@@ -55,6 +56,7 @@ includedirs {
     "%{Inc_Dir.ImGui}/",
     "%{Inc_Dir.ImGui}/backends",
     "%{Inc_Dir.Assimp}/include",
+    "%{Inc_Dir.glm}",
 
 
 }

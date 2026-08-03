@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>lzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LZ_PLATFORM_WINDOWS;LZ_BUILD_DLL;_WINDLL;LZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -108,7 +108,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
       <PrecompiledHeaderFile>lzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LZ_PLATFORM_WINDOWS;LZ_BUILD_DLL;_WINDLL;LZ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -140,7 +140,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
       <PrecompiledHeaderFile>lzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>LZ_PLATFORM_WINDOWS;LZ_BUILD_DLL;_WINDLL;LZ_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -174,11 +174,15 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\Lazzo\Layers\Layer.h" />
     <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
     <ClInclude Include="src\Lazzo\Log.h" />
+    <ClInclude Include="src\Lazzo\Primitives\Cube.h" />
+    <ClInclude Include="src\Lazzo\Primitives\Primitives.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Event.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Events.h" />
     <ClInclude Include="src\Lazzo\Window\Events\KeyDownEvent.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\GraphicsAPI.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsFactory.h" />
     <ClInclude Include="src\Lazzo\Window\UI\ImguiUI.h" />
     <ClInclude Include="src\Lazzo\Window\Window.h" />
@@ -189,6 +193,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
     <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
+    <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp" />
     <ClCompile Include="src\Lazzo\Window\UI\ImguiUI.cpp" />

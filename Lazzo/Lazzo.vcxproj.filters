@@ -10,6 +10,9 @@
     <Filter Include="src\Lazzo\Layers">
       <UniqueIdentifier>{EBB95E37-D7B2-7D89-00E5-620EEC3C5D95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lazzo\Primitives">
+      <UniqueIdentifier>{07572136-F3E5-AAFF-9C04-BFFA8872BBA5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lazzo\Window">
       <UniqueIdentifier>{13309251-FF28-B1A3-285B-962814B390AF}</UniqueIdentifier>
     </Filter>
@@ -59,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="src\Lazzo\Log.h">
       <Filter>src\Lazzo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Primitives\Primitives.h">
+      <Filter>src\Lazzo\Primitives</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Window\Events\Event.h">
       <Filter>src\Lazzo\Window\Events</Filter>
