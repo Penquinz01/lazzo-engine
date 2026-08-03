@@ -30,7 +30,7 @@ namespace Lazzo {
 
         template <typename T>
         void Push(unsigned int count) {
-            static_assert(false, "Unsupported type!");
+            static_assert(false);
         }
         template<>
         void Push<float>(unsigned int count) {
@@ -42,7 +42,7 @@ namespace Lazzo {
             m_Elements.push_back({ GL_UNSIGNED_INT, count, GL_FALSE });
             m_Stride += count * VertexBufferElement::getSizeOfType(GL_UNSIGNED_INT);
         }
-
+        template<>
         void Push<unsigned char>(unsigned int count) {
             m_Elements.push_back({ GL_UNSIGNED_BYTE, count, GL_TRUE });
             m_Stride += count * VertexBufferElement::getSizeOfType(GL_UNSIGNED_BYTE);

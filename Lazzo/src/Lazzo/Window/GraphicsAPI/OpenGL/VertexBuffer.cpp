@@ -1,3 +1,4 @@
+#include "lzpch.h"
 #include "VertexBuffer.h"
 
 namespace Lazzo {

@@ -93,6 +93,12 @@
     <ClInclude Include="src\lzpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Primitives\Cube.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBufferLayout.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
@@ -143,5 +149,10 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
       <Filter>vendor\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
   </ItemGroup>
 </Project>

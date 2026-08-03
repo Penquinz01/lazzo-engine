@@ -1,4 +1,4 @@
-#pragma once
+#include "lzpch.h"
 #include "VertexArray.h"
 
 namespace Lazzo {
