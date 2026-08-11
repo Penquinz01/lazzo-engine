@@ -1,7 +1,7 @@
 #include "lzpch.h"
 #include "VertexBuffer.h"
 
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     VertexBuffer::VertexBuffer(const void* data, unsigned int stride) {
         glGenBuffers(1, &m_RendererID);
         glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);

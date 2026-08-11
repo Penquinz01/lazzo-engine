@@ -1,6 +1,6 @@
  #pragma once
 #include <glad/glad.h>
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     class VertexBuffer {
     private:
         unsigned int m_RendererID;

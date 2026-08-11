@@ -6,12 +6,14 @@
 #include <algorithm>
 #include <functional>
 #include <fstream>
+#include <cmath>
 
 #include <string>
 #include <sstream>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+
 
 
 #ifdef LZ_PLATFORM_WINDOWS

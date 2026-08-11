@@ -1,7 +1,7 @@
 #pragma once
 #include <glad/glad.h>
 
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     class IndexBuffer
     {
     private:

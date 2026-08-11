@@ -2,7 +2,7 @@
 #include "Shader.h"
 #include <Lazzo/Log.h>
 
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath) : vertexSourcePath(vertexPath), fragmentSourcePath(fragmentPath) {
 
         m_RendererID = CreateShader(vertexSourcePath, fragmentSourcePath);

@@ -1,7 +1,7 @@
 #include "lzpch.h"
 #include "VertexArray.h"
 
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     VertexArray::VertexArray() {
         glGenVertexArrays(1, &m_RendererID);
     }

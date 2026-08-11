@@ -2,5 +2,7 @@
 #include "Cube.h"
 
 namespace Lazzo {
-    
+    Cube::Cube(){
+
+    }
 }

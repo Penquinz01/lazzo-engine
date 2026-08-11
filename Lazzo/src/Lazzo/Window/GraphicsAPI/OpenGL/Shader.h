@@ -4,7 +4,7 @@
 
 #include <glad/glad.h>
 
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     class Shader
     {
     private:

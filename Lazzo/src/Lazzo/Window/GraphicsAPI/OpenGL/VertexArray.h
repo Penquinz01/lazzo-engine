@@ -3,7 +3,7 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     class VertexArray {
     private:
         unsigned int m_RendererID{};

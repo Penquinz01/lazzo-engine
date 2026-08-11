@@ -1,5 +1,6 @@
 #pragma once
 #include "Primitives.h"
+#include "Lazzo/Utilities/Utilities.h"
 
 namespace Lazzo {
     class Cube : public Primitives {
@@ -7,9 +8,6 @@ namespace Lazzo {
         Cube();
         ~Cube();
         void Draw();
-        void ChangePosition(const glm::vec3 pos);
-        void ChangeRotation(const glm::vec3 rot);
-        void ChangeScale(const glm::vec3 sc);
     private:
         inline static constexpr float cubeVertices[] = {
             // Back face
@@ -60,5 +58,10 @@ namespace Lazzo {
              -0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,
              -0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f
         };
+        Lazzo::Utilities::Vector3 position;
+        Lazzo::Utilities::Vector3 rotation;
+        Lazzo::Utilities::Vector3 scale;
+
+
     };
 }

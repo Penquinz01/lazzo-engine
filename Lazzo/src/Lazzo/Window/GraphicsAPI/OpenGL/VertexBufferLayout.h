@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <glad/glad.h>
-namespace Lazzo {
+namespace Lazzo::OpenGL {
     struct VertexBufferElement
     {
         unsigned int type;
