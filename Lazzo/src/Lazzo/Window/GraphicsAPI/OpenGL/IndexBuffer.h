@@ -1,8 +1,9 @@
 #pragma once
 #include <glad/glad.h>
+#include "Lazzo/Window/GraphicsAPI/GraphicsAPI.h"
 
 namespace Lazzo::OpenGL {
-    class IndexBuffer
+    class IndexBuffer :public Lazzo::Graphics::IndexBuffer
     {
     private:
         unsigned int m_RendererID;

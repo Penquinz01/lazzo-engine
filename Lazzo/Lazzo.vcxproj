@@ -167,6 +167,8 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Lazzo\Utilities\Utilities.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Vector.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
     <ClInclude Include="src\Lazzo.h" />
@@ -192,6 +194,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\lzpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="src\Lazzo\Application.cpp" />

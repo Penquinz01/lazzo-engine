@@ -14,7 +14,7 @@ namespace Lazzo::OpenGL {
     void VertexBuffer::Bind() const {
         glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
     }
-    void VertexBuffer::UnBind() const{
+    void VertexBuffer::Unbind() const{
         glBindBuffer(GL_ARRAY_BUFFER, 0);
     }
 }

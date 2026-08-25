@@ -99,6 +99,8 @@
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBufferLayout.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Vector.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
@@ -154,5 +156,6 @@
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
+    <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
   </ItemGroup>
 </Project>

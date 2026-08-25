@@ -50,4 +50,25 @@ namespace Lazzo::OpenGL {
         }
         return id;
     }
+    int Shader::GetUniformLocation(const std::string& name) const {
+        return glGetUniformLocation(m_RendererID, name.c_str());
+    }
+    void Lazzo::OpenGL::Shader::SetInt(const std::string& name, int value) const {
+        glUniform1i(GetUniformLocation(name), value);
+    }
+    void Lazzo::OpenGL::Shader::SetFloat(const std::string& name, float value) const {
+        glUniform1f(GetUniformLocation(name), value);
+    }
+    void Lazzo::OpenGL::Shader::SetMat4(const std::string& name, const glm::mat4& matrix) const {
+        glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
+    }
+    void Lazzo::OpenGL::Shader::SetFloat2(const std::string& name, const glm::vec2& vector) const {
+        glUniform2f(GetUniformLocation(name), vector.x, vector.y);
+    }
+    void Lazzo::OpenGL::Shader::SetFloat3(const std::string& name, const glm::vec3& vector) const {
+        glUniform3f(GetUniformLocation(name), vector.x, vector.y, vector.z);
+    }
+    void Lazzo::OpenGL::Shader::SetFloat4(const std::string& name, const glm::vec4& vector) const {
+        glUniform4f(GetUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
+    }
 }

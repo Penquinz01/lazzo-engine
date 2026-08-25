@@ -2,7 +2,8 @@
 
 #include <vector>
 #include <glad/glad.h>
-namespace Lazzo::OpenGL {
+
+namespace Lazzo::Graphics {
     struct VertexBufferElement
     {
         unsigned int type;
@@ -20,8 +21,10 @@ namespace Lazzo::OpenGL {
             }
         }
     };
+    
 
     class VertexBufferLayout {
+
     private:
         std::vector<VertexBufferElement> m_Elements;
         unsigned int m_Stride;

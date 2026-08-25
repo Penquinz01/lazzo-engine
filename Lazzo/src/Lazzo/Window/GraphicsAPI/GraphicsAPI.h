@@ -1,4 +1,11 @@
 #pragma once
+#include "Renderer.h"
+#include "VertexBuffer.h"
+#include "VertexArray.h"
+#include "VertexBufferLayout.h"
+#include "IndexBuffer.h"
+#include "Shader.h"
+#include "ShaderFileData.h"
 #include "SDL3/SDL.h"
 
 enum class GraphicAPI

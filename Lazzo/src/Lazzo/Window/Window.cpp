@@ -2,6 +2,7 @@
 
 #include "Window.h"
 #include "Lazzo/Log.h"
+#include "Lazzo/Utilities/Info.h"
 #include <glad/glad.h>
 #include "Events/Events.h"
 #include "GraphicsAPI/GraphicsAPI.h"
@@ -15,6 +16,7 @@ namespace Lazzo {
 			LZ_ERROR("SDL Couldnt be initialized Error:%s",SDL_GetError());
 		}
 		if(m_GraphicBackend == GraphicAPI::OpenGL) {
+            Lazzo::Utilities::Info::GetInstance().m_GraphicBackend = GraphicAPI::OpenGL;
 			m_Window = std::unique_ptr<SDL_Window, DeleteWindow>(
 				SDL_CreateWindow(title,
 					width,
