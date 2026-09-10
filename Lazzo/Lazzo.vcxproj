@@ -83,7 +83,7 @@
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -114,7 +114,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -146,7 +146,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -176,7 +176,10 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\Lazzo\Log.h" />
     <ClInclude Include="src\Lazzo\Object\Camera\Camera.h" />
     <ClInclude Include="src\Lazzo\Object\GameObject.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\DirectionalLight.h" />
     <ClInclude Include="src\Lazzo\Object\Lights\Light.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\PointLight.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\SpotLight.h" />
     <ClInclude Include="src\Lazzo\Object\Object.h" />
     <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h" />
     <ClInclude Include="src\Lazzo\Primitives\Cube.h" />
@@ -214,6 +217,9 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
     <ClCompile Include="src\Lazzo\Object\Camera\Camera.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Lights\DirectionalLight.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Lights\PointLight.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Lights\SpotLight.cpp" />
     <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp" />
     <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
     <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />

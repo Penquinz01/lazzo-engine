@@ -20,7 +20,9 @@ namespace Lazzo
 		SDL_Event event{};
 		Window(const char* title, int width, int height);
 		~Window();
-		bool OnUpdate(const std::function<void()>& renderScene, const std::function<void()>& renderUI);
+		bool OnUpdate(const std::function<void()>& update, const std::function<void()>& renderScene, const std::function<void()>& renderUI);
+
+		SDL_Window* GetSDLWindow() const { return m_Window.get(); }
 	private:
     SDL_GLContext gl_context{};
     GraphicAPI m_GraphicBackend{ GraphicAPI::OpenGL };

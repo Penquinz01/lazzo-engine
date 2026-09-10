@@ -1,29 +1,35 @@
 #pragma once
+#include "Lazzo/Core.h"
 #include <glm/glm.hpp>
 
 namespace Lazzo::Object::Lights {
-    class Light
-    {
-    public:
-        virtual ~Light() = default;
-        void SetPosition(float x, float y, float z) { position.x = x; position.y = y; position.z = z; }
-        void SetPosition(const glm::vec3& pos) { position = pos; }
-        glm::vec3 GetPosition() const { return position; }
-
-
-
-    public:
-        glm::vec3 position;
-        float intensity;
-        LightType type;
-        float range;
-
-    };
 
     enum class LightType
     {
         Directional,
         Point,
         Spot
+    };
+
+    class LAZZO_API Light
+    {
+    public:
+        Light() = default;
+        virtual ~Light() = default;
+
+        LightType GetType() const { return m_Type; }
+
+        void SetColor(const glm::vec3& color) { m_Color = color; }
+        glm::vec3 GetColor() const { return m_Color; }
+
+        void SetIntensity(float intensity) { m_Intensity = intensity; }
+        float GetIntensity() const { return m_Intensity; }
+
+        virtual void DrawUI() = 0;
+
+    protected:
+        LightType m_Type{ LightType::Directional };
+        glm::vec3 m_Color{ 1.0f, 1.0f, 1.0f };
+        float m_Intensity{ 1.0f };
     };
 }

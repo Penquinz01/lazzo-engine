@@ -84,7 +84,16 @@
     <ClInclude Include="src\Lazzo\Object\GameObject.h">
       <Filter>src\Lazzo\Object</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Lights\DirectionalLight.h">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Object\Lights\Light.h">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Lights\PointLight.h">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Lights\SpotLight.h">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Object\Object.h">
@@ -193,6 +202,15 @@
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\Camera\Camera.cpp">
       <Filter>src\Lazzo\Object\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Lights\DirectionalLight.cpp">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Lights\PointLight.cpp">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Lights\SpotLight.cpp">
+      <Filter>src\Lazzo\Object\Lights</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp">
       <Filter>src\Lazzo\Object</Filter>

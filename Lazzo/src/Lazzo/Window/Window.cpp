@@ -39,7 +39,7 @@ namespace Lazzo {
 		SDL_Quit();
 	}
 
-	bool Window::OnUpdate(const std::function<void()>& renderScene, const std::function<void()>& renderUI) {
+	bool Window::OnUpdate(const std::function<void()>& update, const std::function<void()>& renderScene, const std::function<void()>& renderUI) {
 		while (true) {
 			while (SDL_PollEvent(&event))
 			{
@@ -60,6 +60,7 @@ namespace Lazzo {
 			  m_ImguiUI->BeginFrame();
 			  glClearColor(0.08f, 0.08f, 0.12f, 1.0f);
 			  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			  update();
 			  renderScene();
 			  renderUI();
 			  m_ImguiUI->Render();

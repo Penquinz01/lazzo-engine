@@ -33,12 +33,7 @@ namespace Lazzo::Object::Camera {
 
 	glm::mat4 Camera::GetViewMatrix() const
 	{
-		glm::mat4 view = glm::mat4(1.0f);
-		view = glm::rotate(view, glm::radians(-m_Rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
-		view = glm::rotate(view, glm::radians(-m_Rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
-		view = glm::rotate(view, glm::radians(-m_Rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
-		view = glm::translate(view, -m_Position);
-		return view;
+		return glm::lookAt(m_Position, m_Position + GetFront(), glm::vec3(0.0f, 1.0f, 0.0f));
 	}
 
 	glm::mat4 Camera::GetProjectionMatrix() const
@@ -55,16 +50,19 @@ namespace Lazzo::Object::Camera {
 
 	glm::vec3 Camera::GetFront() const
 	{
-		glm::mat4 rot = glm::mat4(1.0f);
-		rot = glm::rotate(rot, glm::radians(m_Rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
-		rot = glm::rotate(rot, glm::radians(m_Rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
-		rot = glm::rotate(rot, glm::radians(m_Rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
-		return glm::normalize(glm::vec3(rot * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f)));
+		float pitch = glm::radians(m_Rotation.x);
+		float yaw = glm::radians(m_Rotation.y);
+		glm::vec3 direction;
+		direction.x = std::cos(yaw) * std::cos(pitch);
+		direction.y = std::sin(pitch);
+		direction.z = std::sin(yaw) * std::cos(pitch);
+		return glm::normalize(direction);
 	}
 
 	void Camera::DrawUI()
 	{
-		ImGui::Begin("Camera");
+		ImGui::PushID("Camera");
+		ImGui::SeparatorText("Camera");
 		ImGui::DragFloat3("Position", glm::value_ptr(m_Position), 0.01f);
 		ImGui::DragFloat3("Rotation", glm::value_ptr(m_Rotation), 0.1f);
 		ImGui::Combo("Projection", reinterpret_cast<int*>(&m_ProjectionMode), "Perspective\0Orthographic\0");
@@ -75,6 +73,6 @@ namespace Lazzo::Object::Camera {
 		ImGui::DragFloat("Aspect Ratio", &m_AspectRatio, 0.01f, 0.1f, 10.0f);
 		ImGui::DragFloat("Near", &m_NearPlane, 0.001f, 0.001f, 10.0f);
 		ImGui::DragFloat("Far", &m_FarPlane, 0.1f, 1.0f, 1000.0f);
-		ImGui::End();
+		ImGui::PopID();
 	}
 }
