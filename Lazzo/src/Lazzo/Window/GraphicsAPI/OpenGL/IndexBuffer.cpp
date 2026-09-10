@@ -17,3 +17,7 @@ namespace Lazzo::OpenGL {
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     }
 }
+
+std::unique_ptr<Lazzo::Graphics::IndexBuffer> Lazzo::Graphics::IndexBuffer::Create(const unsigned int* data, unsigned int count) {
+    return std::make_unique<Lazzo::OpenGL::IndexBuffer>(data, count);
+}

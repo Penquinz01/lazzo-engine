@@ -2,13 +2,15 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
+#include "Lazzo/Window/GraphicsAPI/Material.h"
 
 namespace Lazzo {
     class Primitives {
     public:
         Primitives() = default;
         ~Primitives() = default;
-        glm::vec3 GetPosition() const { return position; }
+        glm::vec3& GetPosition() { return position; }
+        const glm::vec3& GetPosition() const { return position; }
         glm::vec3 GetRotation() const { return rotation; }
         glm::vec3 GetScale() const { return scale; }
         glm::vec3 SetPosition(const glm::vec3& pos) { position = pos; return position; }
@@ -20,5 +22,6 @@ namespace Lazzo {
         glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f);
     protected:
         unsigned int VAO, VBO, EBO;
+        std::unique_ptr<Graphics::Material> m_Material;
     };
 }

@@ -119,6 +119,7 @@ includedirs {
     "%{Inc_Dir.ImGui}/",
     "%{Inc_Dir.ImGui}/backends",
     "Lazzo/src",
+    "Lazzo/vendor/glm",
 }
 links {
     "Lazzo",

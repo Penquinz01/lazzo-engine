@@ -31,7 +31,7 @@ namespace Lazzo
   {
     
   }
-  void ImguiUI::Render()
+  void ImguiUI::BeginFrame()
   {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplSDL3_NewFrame();
@@ -56,12 +56,14 @@ namespace Lazzo
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
     ImGui::End();
 
+  }
+
+  void ImguiUI::Render()
+  {
     ImGui::Render();
+    ImGuiIO& io = ImGui::GetIO();
     glViewport(0, 0, (int)io.DisplaySize.x, (int)io.DisplaySize.y);
-    glClearColor(clear_color[0], clear_color[1], clear_color[2], clear_color[3]);
-    glClear(GL_COLOR_BUFFER_BIT);
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-    
   }
 
   void ImguiUI::ProcessEvent(const SDL_Event& event)

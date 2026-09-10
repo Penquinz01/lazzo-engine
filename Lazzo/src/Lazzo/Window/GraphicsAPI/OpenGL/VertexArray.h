@@ -1,7 +1,6 @@
 #pragma once
 #include <glad/glad.h>
-#include "VertexBuffer.h"
-#include "Lazzo/Window/GraphicsAPI/GraphicsAPI.h"
+#include "Lazzo/Window/GraphicsAPI/VertexArray.h"
 
 namespace Lazzo::OpenGL {
     class VertexArray:public Lazzo::Graphics::VertexArray {
@@ -14,6 +13,6 @@ namespace Lazzo::OpenGL {
         void Bind() const;
         void UnBind() const;
 
-        void AddBuffer(const VertexBuffer& vb, const Lazzo::Graphics::VertexBufferLayout& layout);
+        void AddBuffer(const Lazzo::Graphics::VertexBuffer& vb, const Lazzo::Graphics::VertexBufferLayout& layout) override;
     };
 }

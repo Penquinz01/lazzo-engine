@@ -20,6 +20,7 @@ namespace Lazzo
     ImguiUI(SDL_Window* window, SDL_GLContext *context);
     ~ImguiUI();
     void Init();
+    void BeginFrame();
     void Render();
     void Shutdown();
     void ProcessEvent(const SDL_Event& event);

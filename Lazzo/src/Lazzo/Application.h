@@ -14,7 +14,12 @@ namespace Lazzo
 		void Run();
 
 		void PushLayer(Layer* layer);
-        void PushOverlay(Layer* overlay);
+		void PushOverlay(Layer* overlay);
+
+	protected:
+		// Scene and UI hooks are called once each frame while the OpenGL context is current.
+		virtual void OnRender() {}
+		virtual void OnImGuiRender() {}
 
 	private:
 		std::unique_ptr<Window> window{};

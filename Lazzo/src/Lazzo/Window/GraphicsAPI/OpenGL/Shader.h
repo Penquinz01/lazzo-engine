@@ -3,7 +3,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <glad/glad.h>
-#include "Lazzo/Window/GraphicsAPI/GraphicsAPI.h"
+#include "Lazzo/Window/GraphicsAPI/Shader.h"
 
 namespace Lazzo::OpenGL {
     class Shader : public Lazzo::Graphics::Shader
@@ -17,11 +17,12 @@ namespace Lazzo::OpenGL {
     public:
         Shader(const std::string& vertexPath, const std::string& fragmentPath);
         ~Shader();
-        void Bind() const;
-        void UnBind() const;
+        void Bind() const override;
+        void UnBind() const override;
     private:
         unsigned int CreateShader(const std::string& vertexSource, const std::string& fragmentSource);
         unsigned int CompileShader(unsigned int type, const std::string& source);
+        static std::string ReadShaderFile(const std::string& path);
 
 
         int GetUniformLocation(const std::string& name) const;

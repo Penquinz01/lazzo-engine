@@ -17,7 +17,9 @@ namespace Lazzo
 	}
 	void Application::Run()
 	{
-		window->OnUpdate();
+		window->OnUpdate(
+			[this]() { OnRender(); },
+			[this]() { OnImGuiRender(); });
 	}
     void Application::PushLayer(Layer* layer)
     {

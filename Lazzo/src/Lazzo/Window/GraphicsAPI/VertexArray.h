@@ -1,7 +1,7 @@
 #pragma once
 #include <memory>
-#include "OpenGL/OpenGL.h"
-#include "GraphicsAPI.h"
+#include "VertexBuffer.h"
+#include "VertexBufferLayout.h"
 
 namespace Lazzo::Graphics {
     
@@ -10,10 +10,8 @@ namespace Lazzo::Graphics {
     public:
         virtual ~VertexArray() = default;
         virtual void Bind() const = 0;
-        virtual void Unbind() const = 0;
+        virtual void UnBind() const = 0;
         virtual void AddBuffer(const Lazzo::Graphics::VertexBuffer& vb, const VertexBufferLayout& layout) = 0;
-        static std::unique_ptr<VertexArray> Create() {
-            return std::make_unique<Lazzo::OpenGL::VertexArray>();
-        }
+        static std::unique_ptr<VertexArray> Create();
     };
 }

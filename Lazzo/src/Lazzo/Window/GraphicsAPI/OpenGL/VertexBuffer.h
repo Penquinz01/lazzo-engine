@@ -1,6 +1,6 @@
  #pragma once
 #include <glad/glad.h>
-#include "Lazzo/Window/GraphicsAPI/GraphicsAPI.h"
+#include "Lazzo/Window/GraphicsAPI/VertexBuffer.h"
 namespace Lazzo::OpenGL {
     class VertexBuffer: public Lazzo::Graphics::VertexBuffer {
     private:

@@ -5,6 +5,7 @@
 #include "imgui_impl_opengl3.h"
 #include "GraphicsAPI/GraphicsAPI.h"
 #include "UI/ImguiUI.h"
+#include <functional>
 
 namespace Lazzo
 {
@@ -19,7 +20,7 @@ namespace Lazzo
 		SDL_Event event{};
 		Window(const char* title, int width, int height);
 		~Window();
-		bool OnUpdate();
+		bool OnUpdate(const std::function<void()>& renderScene, const std::function<void()>& renderUI);
 	private:
     SDL_GLContext gl_context{};
     GraphicAPI m_GraphicBackend{ GraphicAPI::OpenGL };
