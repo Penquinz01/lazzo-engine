@@ -96,11 +96,22 @@
     <ClInclude Include="src\Lazzo\Primitives\Cube.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBufferLayout.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
     <ClInclude Include="src\Lazzo\Utilities\Vector.h" />
     <ClInclude Include="src\Lazzo\Utilities\Utilities.h" />
+    <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Renderer.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Info.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\OpenGL.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexArray.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\IndexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Shader.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\ShaderFileData.h" />
+    <ClInclude Include="src\Lazzo\Object\GameObject.h" />
+    <ClInclude Include="src\Lazzo\Object\Object.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
@@ -157,5 +168,7 @@
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
     <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
+    <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.cpp" />
   </ItemGroup>
 </Project>

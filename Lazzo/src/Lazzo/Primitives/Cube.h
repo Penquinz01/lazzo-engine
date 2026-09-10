@@ -1,9 +1,12 @@
 #pragma once
 #include "Primitives.h"
 #include "Lazzo/Utilities/Utilities.h"
+#include "Lazzo/Object/GameObject.h"
+
+using namespace Lazzo::Object;
 
 namespace Lazzo {
-    class Cube : public Primitives {
+    class Cube : public Primitives, public GameObject {
     public:
         Cube();
         ~Cube();
@@ -58,10 +61,6 @@ namespace Lazzo {
              -0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,
              -0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f
         };
-        Lazzo::Utilities::Vector3 position;
-        Lazzo::Utilities::Vector3 rotation;
-        Lazzo::Utilities::Vector3 scale;
-
 
     };
 }
