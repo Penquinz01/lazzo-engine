@@ -39,6 +39,7 @@ namespace Lazzo {
         m_Material->SetMat4("u_Model", model);
         m_Material->SetMat4("u_View", camera.GetViewMatrix());
         m_Material->SetMat4("u_Projection", camera.GetProjectionMatrix());
+        m_Material->SetFloat3("u_Color", GetColor());
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
@@ -46,7 +47,16 @@ namespace Lazzo {
 
     void Cube::DrawUI() {
         ImGui::Begin("Cube");
-        ImGui::DragFloat3("Position", glm::value_ptr(GetPosition()), 0.01f);
+        if (ImGui::DragFloat3("Position", glm::value_ptr(GetPosition()), 0.01f)) {}
+        glm::vec3 rotation = GetRotation();
+        if (ImGui::DragFloat3("Rotation", glm::value_ptr(rotation), 0.1f))
+            SetRotation(rotation);
+        glm::vec3 scale = GetScale();
+        if (ImGui::DragFloat3("Scale", glm::value_ptr(scale), 0.01f))
+            SetScale(scale);
+        glm::vec3 color = GetColor();
+        if (ImGui::ColorEdit3("Color", glm::value_ptr(color)))
+            SetColor(color);
         ImGui::End();
     }
 

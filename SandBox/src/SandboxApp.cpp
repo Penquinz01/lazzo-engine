@@ -11,6 +11,7 @@ public:
 		m_Camera.SetPosition(0.0f, 0.0f, 3.0f);
 		m_Camera.SetNearPlane(0.1f);
 		m_Camera.SetFarPlane(100.0f);
+		m_Cube.SetRotation(glm::vec3(30.0f, 45.0f, 0.0f));
 	}
 	~SandBox() {
 	}
