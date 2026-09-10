@@ -1,11 +1,16 @@
 #include "lzpch.h"
 #include <Lazzo.h>
 #include <Lazzo/Primitives/Cube.h>
-#include <Lazzo/Object/Camera/PerspectiveCamera.h>
+#include <Lazzo/Object/Camera/Camera.h>
 
 class SandBox : public Lazzo::Application {
 public:
 	SandBox() {
+		m_Camera.SetAspectRatio(16.0f / 9.0f);
+		m_Camera.SetFOV(45.0f);
+		m_Camera.SetPosition(0.0f, 0.0f, 3.0f);
+		m_Camera.SetNearPlane(0.1f);
+		m_Camera.SetFarPlane(100.0f);
 	}
 	~SandBox() {
 	}
@@ -22,7 +27,7 @@ protected:
 
 private:
 	Lazzo::Cube m_Cube;
-	Lazzo::Object::Camera::PerspectiveCamera m_Camera{ 45.0f, 16.0f / 9.0f, 0.1f, 100.0f };
+	Lazzo::Object::Camera::Camera m_Camera{};
 };
 
 

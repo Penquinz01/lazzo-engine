@@ -81,9 +81,6 @@
     <ClInclude Include="src\Lazzo\Object\Camera\Camera.h">
       <Filter>src\Lazzo\Object\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lazzo\Object\Camera\PerspectiveCamera.h">
-      <Filter>src\Lazzo\Object\Camera</Filter>
-    </ClInclude>
     <ClInclude Include="src\Lazzo\Object\GameObject.h">
       <Filter>src\Lazzo\Object</Filter>
     </ClInclude>
@@ -194,7 +191,7 @@
     <ClCompile Include="src\Lazzo\Log.cpp">
       <Filter>src\Lazzo</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lazzo\Object\Camera\PerspectiveCamera.cpp">
+    <ClCompile Include="src\Lazzo\Object\Camera\Camera.cpp">
       <Filter>src\Lazzo\Object\Camera</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp">

@@ -175,7 +175,6 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
     <ClInclude Include="src\Lazzo\Log.h" />
     <ClInclude Include="src\Lazzo\Object\Camera\Camera.h" />
-    <ClInclude Include="src\Lazzo\Object\Camera\PerspectiveCamera.h" />
     <ClInclude Include="src\Lazzo\Object\GameObject.h" />
     <ClInclude Include="src\Lazzo\Object\Lights\Light.h" />
     <ClInclude Include="src\Lazzo\Object\Object.h" />
@@ -214,7 +213,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
     <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
-    <ClCompile Include="src\Lazzo\Object\Camera\PerspectiveCamera.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Camera\Camera.cpp" />
     <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp" />
     <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
     <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />

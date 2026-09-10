@@ -70,8 +70,7 @@ Lazzo/                        Root
 │           │   ├── GameObject.h            Abstract game object (position/rotation/scale)
 │           │   ├── ObjectRenderer.h/cpp    Binds VBO/VAO/IBO/Shader for a draw call
 │           │   ├── Camera/
-│           │   │   ├── Camera.h            Abstract camera interface (interfaces identical to GraphicsAPI pattern)
-│           │   │   └── PerspectiveCamera.h/cpp   Concrete FPS-style camera; GetViewMatrix/GetProjectionMatrix; DrawUI
+│           │   │   └── Camera.h/cpp        Unity-style camera: Perspective/Orthographic toggle, GetViewMatrix/GetProjectionMatrix, DrawUI
 │           │   └── Lights/
 │           │       └── Light.h             Base light class + LightType enum
 │           └── Utilities/
@@ -157,12 +156,14 @@ Graphics resources (abstract)    Lazzo/Window/GraphicsAPI/
   graphics pipeline).
 - `ObjectRenderer` is a newer path that uses the abstract VBO/VAO/IBO/Shader
   factories but is not yet wired into the layer/render loop.
-- `Camera` is an abstract interface (`Lazzo::Object::Camera::Camera`);
-  `PerspectiveCamera` implements `GetViewMatrix()` (Euler pitch/yaw/roll
-  matching `Cube`'s rotation order) and `GetProjectionMatrix()` (GLM
-  perspective). `Cube::Draw()` takes a `const Camera&` and uploads
-  `u_Model`/`u_View`/`u_Projection`. Use the interface + `LAZZO_API` types for
-  drawing code; ImGui inspectors live in the DLL (`DrawUI()`).
+- `Camera` is a Unity-style class (`Lazzo::Object::Camera::Camera`): flipped
+  between Perspective (FOV) and Orthographic 2D (orthographic size) via
+  `SetProjectionMode()`/`ProjectionMode` (or the `DrawUI()` combo).
+  `GetViewMatrix()` (Euler pitch/yaw/roll matching `Cube`'s rotation order) and
+  `GetProjectionMatrix()` (`glm::perspective` / `glm::orthoRH_ZO`, keeping both
+  modes right-handed so they share the same view). `Cube::Draw()` takes a
+  `const Camera&` and uploads `u_Model`/`u_View`/`u_Projection`. ImGui
+  inspectors live in the DLL (`DrawUI()`).
 
 ---
 
