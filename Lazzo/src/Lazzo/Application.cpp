@@ -11,10 +11,6 @@ namespace Lazzo
 		running = true;
         m_LayerStack = LayerStack();
 	}
-	Application::~Application()
-	{
-
-	}
 	void Application::Run()
 	{
 		window->OnUpdate(

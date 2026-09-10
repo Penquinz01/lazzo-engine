@@ -3,6 +3,7 @@
 #include "Primitives.h"
 #include "Lazzo/Utilities/Utilities.h"
 #include "Lazzo/Object/GameObject.h"
+#include "Lazzo/Object/Camera/Camera.h"
 
 using namespace Lazzo::Object;
 
@@ -11,7 +12,7 @@ namespace Lazzo {
     public:
         Cube();
         ~Cube();
-        void Draw();
+        void Draw(const Lazzo::Object::Camera::Camera& camera);
         void DrawUI();
         void Update(float deltaTime) override;
     private:

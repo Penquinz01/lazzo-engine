@@ -28,7 +28,7 @@ namespace Lazzo {
         glDeleteVertexArrays(1, &VAO);
     }
 
-    void Cube::Draw() {
+    void Cube::Draw(const Lazzo::Object::Camera::Camera& camera) {
         glm::mat4 model = glm::translate(glm::mat4(1.0f), GetPosition());
         model = glm::rotate(model, glm::radians(GetRotation().x), glm::vec3(1.0f, 0.0f, 0.0f));
         model = glm::rotate(model, glm::radians(GetRotation().y), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -37,6 +37,8 @@ namespace Lazzo {
 
         m_Material->Bind();
         m_Material->SetMat4("u_Model", model);
+        m_Material->SetMat4("u_View", camera.GetViewMatrix());
+        m_Material->SetMat4("u_Projection", camera.GetProjectionMatrix());
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);

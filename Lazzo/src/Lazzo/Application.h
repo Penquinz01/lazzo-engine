@@ -9,8 +9,8 @@ namespace Lazzo
 {
 	class LAZZO_API Application {
 		public:
-		Application();
-		~Application();
+Application();
+		virtual ~Application() = default;
 		void Run();
 
 		void PushLayer(Layer* layer);

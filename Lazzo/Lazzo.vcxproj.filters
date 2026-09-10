@@ -10,8 +10,20 @@
     <Filter Include="src\Lazzo\Layers">
       <UniqueIdentifier>{EBB95E37-D7B2-7D89-00E5-620EEC3C5D95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lazzo\Object">
+      <UniqueIdentifier>{B210683E-9E09-8790-C73B-6C15B393669C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lazzo\Object\Camera">
+      <UniqueIdentifier>{EAA8CF21-56E0-17B9-5FEA-7BDCCBA03EB2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lazzo\Object\Lights">
+      <UniqueIdentifier>{6C9D5B37-D8D4-A3CE-E1DE-07F24D95CAC7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lazzo\Primitives">
       <UniqueIdentifier>{07572136-F3E5-AAFF-9C04-BFFA8872BBA5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lazzo\Utilities">
+      <UniqueIdentifier>{1788E3A9-83E9-C0B7-0C57-076A78B7F776}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Lazzo\Window">
       <UniqueIdentifier>{13309251-FF28-B1A3-285B-962814B390AF}</UniqueIdentifier>
@@ -21,6 +33,9 @@
     </Filter>
     <Filter Include="src\Lazzo\Window\GraphicsAPI">
       <UniqueIdentifier>{EDE34A7A-D99E-3A26-8256-B3706EF084B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lazzo\Window\GraphicsAPI\OpenGL">
+      <UniqueIdentifier>{81401CBE-EDF9-8668-7659-A142E2113DD8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Lazzo\Window\UI">
       <UniqueIdentifier>{606EAFDA-CCCF-8CE8-553D-D39AC19DC3A7}</UniqueIdentifier>
@@ -63,8 +78,38 @@
     <ClInclude Include="src\Lazzo\Log.h">
       <Filter>src\Lazzo</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Camera\Camera.h">
+      <Filter>src\Lazzo\Object\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Camera\PerspectiveCamera.h">
+      <Filter>src\Lazzo\Object\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\GameObject.h">
+      <Filter>src\Lazzo\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Lights\Light.h">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Object.h">
+      <Filter>src\Lazzo\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h">
+      <Filter>src\Lazzo\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Primitives\Cube.h">
+      <Filter>src\Lazzo\Primitives</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Primitives\Primitives.h">
       <Filter>src\Lazzo\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Utilities\Info.h">
+      <Filter>src\Lazzo\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Utilities\Utilities.h">
+      <Filter>src\Lazzo\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Utilities\Vector.h">
+      <Filter>src\Lazzo\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Window\Events\Event.h">
       <Filter>src\Lazzo\Window\Events</Filter>
@@ -78,7 +123,49 @@
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\GraphicsAPI.h">
       <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\IndexBuffer.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Material.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\OpenGL.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Renderer.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Shader.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\ShaderFileData.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexArray.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexBuffer.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexBufferLayout.h">
       <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Window\GraphicsFactory.h">
@@ -93,25 +180,6 @@
     <ClInclude Include="src\lzpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lazzo\Primitives\Cube.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
-    <ClInclude Include="src\Lazzo\Utilities\Vector.h" />
-    <ClInclude Include="src\Lazzo\Utilities\Utilities.h" />
-    <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Renderer.h" />
-    <ClInclude Include="src\Lazzo\Utilities\Info.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexBuffer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\OpenGL.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexArray.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\IndexBuffer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Shader.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\ShaderFileData.h" />
-    <ClInclude Include="src\Lazzo\Object\GameObject.h" />
-    <ClInclude Include="src\Lazzo\Object\Object.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp">
@@ -126,8 +194,35 @@
     <ClCompile Include="src\Lazzo\Log.cpp">
       <Filter>src\Lazzo</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Camera\PerspectiveCamera.cpp">
+      <Filter>src\Lazzo\Object\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp">
+      <Filter>src\Lazzo\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Primitives\Cube.cpp">
+      <Filter>src\Lazzo\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Utilities\Vector.cpp">
+      <Filter>src\Lazzo\Utilities</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp">
       <Filter>src\Lazzo\Window\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp">
       <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
@@ -162,13 +257,5 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
       <Filter>vendor\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
-    <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
-    <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.cpp" />
   </ItemGroup>
 </Project>
