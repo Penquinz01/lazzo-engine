@@ -26,19 +26,19 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -171,6 +171,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\Lazzo\Application.h" />
     <ClInclude Include="src\Lazzo\Core.h" />
     <ClInclude Include="src\Lazzo\EntryPoint.h" />
+    <ClInclude Include="src\Lazzo\Input\InputManager.h" />
     <ClInclude Include="src\Lazzo\Layers\Layer.h" />
     <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
     <ClInclude Include="src\Lazzo\Log.h" />
@@ -190,6 +191,11 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClInclude Include="src\Lazzo\Window\Events\Event.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Events.h" />
     <ClInclude Include="src\Lazzo\Window\Events\KeyDownEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\KeyUpEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseButtonPressedEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseButtonReleasedEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseMovedEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseScrolledEvent.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\GraphicsAPI.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\IndexBuffer.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Material.h" />
@@ -213,6 +219,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Lazzo\Application.cpp" />
+    <ClCompile Include="src\Lazzo\Input\InputManager.cpp" />
     <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
     <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
@@ -224,6 +231,11 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
     <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\KeyUpEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseButtonPressedEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseButtonReleasedEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseMovedEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseScrolledEvent.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />

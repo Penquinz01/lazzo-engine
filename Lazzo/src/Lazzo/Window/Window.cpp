@@ -3,6 +3,7 @@
 #include "Window.h"
 #include "Lazzo/Log.h"
 #include "Lazzo/Utilities/Info.h"
+#include "Lazzo/Input/InputManager.h"
 #include <glad/glad.h>
 #include "Events/Events.h"
 #include "GraphicsAPI/GraphicsAPI.h"
@@ -47,14 +48,9 @@ namespace Lazzo {
 				if (event.type == SDL_EVENT_QUIT) {
 					return false;
 				}
-				switch (event.type) {
-				case SDL_EVENT_KEY_DOWN:
-					KeyDownEvent keyDownEvent(event);
-					if (keyDownEvent.ReturnScanCode() == SDL_SCANCODE_ESCAPE) {
-						return false;
-					}
-					LZ_TRACE("Key Down Event: {}", keyDownEvent.ReturnScanCode());
-					break;
+				Lazzo::InputManager::GetInstance().ProcessEvent(event);
+				if (event.type == SDL_EVENT_KEY_DOWN && event.key.scancode == SDL_SCANCODE_ESCAPE) {
+					return false;
 				}
 			}
 			  m_ImguiUI->BeginFrame();
