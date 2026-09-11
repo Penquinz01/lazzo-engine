@@ -57,7 +57,7 @@ private:
 	};
 };
 
-
+ 
 Lazzo::Application* Lazzo::CreateApplication() {
 	return new SandBox();
 }
