@@ -1,5 +1,6 @@
 #include "lzpch.h"
 #include "EditorInputLayer.h"
+#include <Lazzo/Input/InputManager.h>
 #include <glm/glm.hpp>
 
 EditorInputLayer::EditorInputLayer(Lazzo::Object::Camera::Camera& camera, SDL_Window* window)
