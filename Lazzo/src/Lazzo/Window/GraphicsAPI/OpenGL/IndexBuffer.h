@@ -1,6 +1,6 @@
 #pragma once
 #include <glad/glad.h>
-#include "Lazzo/Window/GraphicsAPI/GraphicsAPI.h"
+#include "Lazzo/Window/GraphicsAPI/IndexBuffer.h"
 
 namespace Lazzo::OpenGL {
     class IndexBuffer :public Lazzo::Graphics::IndexBuffer

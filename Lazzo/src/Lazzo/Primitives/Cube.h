@@ -1,16 +1,23 @@
 #pragma once
+#include "Lazzo/Core.h"
 #include "Primitives.h"
 #include "Lazzo/Utilities/Utilities.h"
 #include "Lazzo/Object/GameObject.h"
+#include "Lazzo/Object/Camera/Camera.h"
+#include "Lazzo/Object/Lights/Light.h"
+#include <vector>
 
 using namespace Lazzo::Object;
 
 namespace Lazzo {
-    class Cube : public Primitives, public GameObject {
+    class LAZZO_API Cube : public Primitives, public GameObject {
     public:
         Cube();
+        Cube(std::string);
         ~Cube();
-        void Draw();
+        void Draw(const Lazzo::Object::Camera::Camera& camera, const std::vector<Lazzo::Object::Lights::Light*>& lights);
+        void DrawUI();
+        void Update(float deltaTime) override;
     private:
         inline static constexpr float cubeVertices[] = {
             // Back face
@@ -61,6 +68,7 @@ namespace Lazzo {
              -0.5f,  0.5f, -0.5f,   0.0f,  1.0f,  0.0f,
              -0.5f,  0.5f,  0.5f,   0.0f,  1.0f,  0.0f
         };
+        std::string m_Id = "Cube";
 
     };
 }

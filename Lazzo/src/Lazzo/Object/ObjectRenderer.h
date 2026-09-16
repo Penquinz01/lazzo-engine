@@ -1,5 +1,10 @@
 #pragma once
-#include "Lazzo/Window/GraphicsAPI/GraphicsAPI.h"
+#include "Lazzo/Window/GraphicsAPI/IndexBuffer.h"
+#include "Lazzo/Window/GraphicsAPI/Renderer.h"
+#include "Lazzo/Window/GraphicsAPI/Shader.h"
+#include "Lazzo/Window/GraphicsAPI/ShaderFileData.h"
+#include "Lazzo/Window/GraphicsAPI/VertexArray.h"
+#include "Lazzo/Window/GraphicsAPI/VertexBuffer.h"
 
 using namespace  Lazzo::Graphics;
 namespace Lazzo::Object {

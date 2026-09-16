@@ -26,19 +26,19 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -83,7 +83,7 @@
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\SDL3\include;vendor\glad\include;vendor\imgui;vendor\imgui\backends;vendor\assimp\include;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -114,7 +114,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -146,7 +146,7 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
@@ -167,58 +167,81 @@ IF EXIST "$(SolutionDir)\Lazzo\vendor\SDL3\lib\x64\SDL3.dll"\ (xcopy /Q /E /Y /I
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Lazzo\Object\GameObject.h" />
-    <ClInclude Include="src\Lazzo\Object\Object.h" />
-    <ClInclude Include="src\Lazzo\Utilities\Info.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\IndexBuffer.h" />
-    <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h" />
-    <ClInclude Include="src\Lazzo\Utilities\Utilities.h" />
-    <ClInclude Include="src\Lazzo\Utilities\Vector.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\OpenGL.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
     <ClInclude Include="src\Lazzo.h" />
     <ClInclude Include="src\Lazzo\Application.h" />
     <ClInclude Include="src\Lazzo\Core.h" />
     <ClInclude Include="src\Lazzo\EntryPoint.h" />
+    <ClInclude Include="src\Lazzo\Input\InputManager.h" />
     <ClInclude Include="src\Lazzo\Layers\Layer.h" />
     <ClInclude Include="src\Lazzo\Layers\LayerStack.h" />
     <ClInclude Include="src\Lazzo\Log.h" />
+    <ClInclude Include="src\Lazzo\Object\Camera\Camera.h" />
+    <ClInclude Include="src\Lazzo\Object\GameObject.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\DirectionalLight.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\Light.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\PointLight.h" />
+    <ClInclude Include="src\Lazzo\Object\Lights\SpotLight.h" />
+    <ClInclude Include="src\Lazzo\Object\Object.h" />
+    <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h" />
     <ClInclude Include="src\Lazzo\Primitives\Cube.h" />
     <ClInclude Include="src\Lazzo\Primitives\Primitives.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Info.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Utilities.h" />
+    <ClInclude Include="src\Lazzo\Utilities\Vector.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Event.h" />
     <ClInclude Include="src\Lazzo\Window\Events\Events.h" />
     <ClInclude Include="src\Lazzo\Window\Events\KeyDownEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\KeyUpEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseButtonPressedEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseButtonReleasedEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseMovedEvent.h" />
+    <ClInclude Include="src\Lazzo\Window\Events\MouseScrolledEvent.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\GraphicsAPI.h" />
-    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\IndexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Material.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\OpenGL.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Renderer.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Shader.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\ShaderFileData.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexArray.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexBuffer.h" />
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexBufferLayout.h" />
     <ClInclude Include="src\Lazzo\Window\GraphicsFactory.h" />
     <ClInclude Include="src\Lazzo\Window\UI\ImguiUI.h" />
     <ClInclude Include="src\Lazzo\Window\Window.h" />
     <ClInclude Include="src\lzpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp" />
-    <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="src\Lazzo\Application.cpp" />
+    <ClCompile Include="src\Lazzo\Input\InputManager.cpp" />
     <ClCompile Include="src\Lazzo\Layers\Layer.cpp" />
     <ClCompile Include="src\Lazzo\Layers\LayerStack.cpp" />
     <ClCompile Include="src\Lazzo\Log.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Camera\Camera.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Lights\DirectionalLight.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Lights\PointLight.cpp" />
+    <ClCompile Include="src\Lazzo\Object\Lights\SpotLight.cpp" />
+    <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp" />
     <ClCompile Include="src\Lazzo\Primitives\Cube.cpp" />
+    <ClCompile Include="src\Lazzo\Utilities\Vector.cpp" />
     <ClCompile Include="src\Lazzo\Window\Events\KeyDownEvent.cpp" />
-    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\KeyUpEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseButtonPressedEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseButtonReleasedEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseMovedEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\Events\MouseScrolledEvent.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Renderer.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.cpp" />
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexBuffer.cpp" />
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGLAPI.cpp" />
     <ClCompile Include="src\Lazzo\Window\UI\ImguiUI.cpp" />
     <ClCompile Include="src\Lazzo\Window\Window.cpp" />
     <ClCompile Include="src\lzpch.cpp">

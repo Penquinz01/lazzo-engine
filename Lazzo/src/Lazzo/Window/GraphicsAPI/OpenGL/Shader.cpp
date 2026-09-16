@@ -4,8 +4,7 @@
 
 namespace Lazzo::OpenGL {
     Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath) : vertexSourcePath(vertexPath), fragmentSourcePath(fragmentPath) {
-
-        m_RendererID = CreateShader(vertexSourcePath, fragmentSourcePath);
+        m_RendererID = CreateShader(ReadShaderFile(vertexSourcePath), ReadShaderFile(fragmentSourcePath));
     }
     Shader::~Shader() {
         glDeleteProgram(m_RendererID);
@@ -15,6 +14,18 @@ namespace Lazzo::OpenGL {
     }
     void Shader::UnBind() const {
         glUseProgram(0);
+    }
+
+    std::string Shader::ReadShaderFile(const std::string& path) {
+        std::ifstream stream(path);
+        if (!stream.is_open()) {
+            LZ_CORE_ERROR("Failed to open shader file: {0}", path);
+            return {};
+        }
+
+        std::stringstream source;
+        source << stream.rdbuf();
+        return source.str();
     }
 
     unsigned int Shader::CreateShader(const std::string& vertexSource, const std::string& fragmentSource) {
@@ -71,4 +82,9 @@ namespace Lazzo::OpenGL {
     void Lazzo::OpenGL::Shader::SetFloat4(const std::string& name, const glm::vec4& vector) const {
         glUniform4f(GetUniformLocation(name), vector.x, vector.y, vector.z, vector.w);
     }
+}
+
+std::unique_ptr<Lazzo::Graphics::Shader> Lazzo::Graphics::Shader::Create(
+    const std::string& vertexPath, const std::string& fragmentPath) {
+    return std::make_unique<Lazzo::OpenGL::Shader>(vertexPath, fragmentPath);
 }
