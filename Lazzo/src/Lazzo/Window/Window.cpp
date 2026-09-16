@@ -3,6 +3,7 @@
 #include "Window.h"
 #include "Lazzo/Log.h"
 #include "Lazzo/Utilities/Info.h"
+#include "Lazzo/Input/InputManager.h"
 #include <glad/glad.h>
 #include "Events/Events.h"
 #include "GraphicsAPI/GraphicsAPI.h"
@@ -28,6 +29,7 @@ namespace Lazzo {
 				return;
 			}
       m_GraphicsAPI = std::make_unique<OpenGLAPI>(m_Window.get());
+			glEnable(GL_DEPTH_TEST);
 		}
 		gl_context = static_cast<OpenGLAPI*>(m_GraphicsAPI.get())->glContext;
     m_ImguiUI = std::make_unique<ImguiUI>(m_Window.get(), &gl_context);
@@ -38,7 +40,7 @@ namespace Lazzo {
 		SDL_Quit();
 	}
 
-	bool Window::OnUpdate() {
+	bool Window::OnUpdate(const std::function<void()>& update, const std::function<void()>& renderScene, const std::function<void()>& renderUI) {
 		while (true) {
 			while (SDL_PollEvent(&event))
 			{
@@ -46,17 +48,18 @@ namespace Lazzo {
 				if (event.type == SDL_EVENT_QUIT) {
 					return false;
 				}
-				switch (event.type) {
-				case SDL_EVENT_KEY_DOWN:
-					KeyDownEvent keyDownEvent(event);
-					if (keyDownEvent.ReturnScanCode() == SDL_SCANCODE_ESCAPE) {
-						return false;
-					}
-					LZ_TRACE("Key Down Event: {}", keyDownEvent.ReturnScanCode());
-					break;
+				Lazzo::InputManager::GetInstance().ProcessEvent(event);
+				if (event.type == SDL_EVENT_KEY_DOWN && event.key.scancode == SDL_SCANCODE_ESCAPE) {
+					return false;
 				}
 			}
-      m_ImguiUI->Render();
+			  m_ImguiUI->BeginFrame();
+			  glClearColor(0.08f, 0.08f, 0.12f, 1.0f);
+			  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			  update();
+			  renderScene();
+			  renderUI();
+			  m_ImguiUI->Render();
 			SDL_GL_SwapWindow(m_Window.get());
 		}
 	}

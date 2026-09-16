@@ -71,7 +71,7 @@ links {
 
 filter "system:windows"
 cppdialect "C++17"
-staticruntime "On"
+staticruntime "Off"
 systemversion "latest"
 characterset("Unicode")
 buildoptions { "/utf-8" }
@@ -119,15 +119,21 @@ includedirs {
     "%{Inc_Dir.ImGui}/",
     "%{Inc_Dir.ImGui}/backends",
     "Lazzo/src",
+    "Lazzo/vendor/glm",
 }
 links {
     "Lazzo",
+    "SDL3",
     "opengl32",
+}
+
+libdirs {
+    "%{SDL3_DIR}/lib/x64",
 }
 
 filter "system:windows"
 cppdialect "C++17"
-staticruntime "On"
+staticruntime "Off"
 systemversion "10.0.26100.0"
 characterset("Unicode")
 buildoptions { "/utf-8" }

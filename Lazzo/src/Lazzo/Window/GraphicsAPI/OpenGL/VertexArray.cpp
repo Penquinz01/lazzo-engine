@@ -17,7 +17,7 @@ namespace Lazzo::OpenGL {
         glBindVertexArray(0);
     }
     
-    void VertexArray::AddBuffer(const VertexBuffer& vb, const Lazzo::Graphics::VertexBufferLayout& layout) {
+    void VertexArray::AddBuffer(const Lazzo::Graphics::VertexBuffer& vb, const Lazzo::Graphics::VertexBufferLayout& layout) {
         Bind();
         vb.Bind();
         const auto& elements = layout.getElements();
@@ -29,4 +29,8 @@ namespace Lazzo::OpenGL {
             offset += element.count * Lazzo::Graphics::VertexBufferElement::getSizeOfType(element.type);
         }
     }
+}
+
+std::unique_ptr<Lazzo::Graphics::VertexArray> Lazzo::Graphics::VertexArray::Create() {
+    return std::make_unique<Lazzo::OpenGL::VertexArray>();
 }

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="editor inputs">
+      <UniqueIdentifier>{4FAADBB7-BB6A-57EE-84A5-A06BF0249CCA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\editor inputs\EditorInputLayer.h">
+      <Filter>editor inputs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SandboxApp.cpp" />
+    <ClCompile Include="src\editor inputs\EditorInputLayer.cpp">
+      <Filter>editor inputs</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

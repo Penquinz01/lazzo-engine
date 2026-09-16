@@ -20,6 +20,7 @@ namespace Lazzo
     ImguiUI(SDL_Window* window, SDL_GLContext *context);
     ~ImguiUI();
     void Init();
+    void BeginFrame();
     void Render();
     void Shutdown();
     void ProcessEvent(const SDL_Event& event);
@@ -27,8 +28,5 @@ namespace Lazzo
     SDL_Window* m_Window{ nullptr };
     char* glsl_version = "#version 460 core";
     float mainScale;
-    bool show_demo_window{ true };
-    float clear_color[4] = { 0.45f, 0.55f, 0.60f, 1.00f };
-    int counter{ 0 };
   };
 }

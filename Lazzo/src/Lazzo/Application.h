@@ -9,12 +9,22 @@ namespace Lazzo
 {
 	class LAZZO_API Application {
 		public:
-		Application();
-		~Application();
+Application();
+		virtual ~Application() = default;
 		void Run();
 
 		void PushLayer(Layer* layer);
-        void PushOverlay(Layer* overlay);
+		void PushOverlay(Layer* overlay);
+
+		Window& GetWindow() { return *window; }
+
+	protected:
+		// Scene and UI hooks are called once each frame while the OpenGL context is current.
+		virtual void OnRender() {}
+		virtual void OnImGuiRender() {}
+
+		void BeginRightPanel(float width = 300.0f);
+		void EndRightPanel();
 
 	private:
 		std::unique_ptr<Window> window{};
