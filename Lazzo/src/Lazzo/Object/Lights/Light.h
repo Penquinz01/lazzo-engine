@@ -11,7 +11,7 @@ namespace Lazzo::Object::Lights {
         Spot
     };
 
-    class LAZZO_API Light
+    class Light
     {
     public:
         Light() = default;

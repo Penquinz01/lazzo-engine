@@ -96,6 +96,9 @@
     <ClInclude Include="src\Lazzo\Object\Lights\Light.h">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Lights\LightManager.h">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Object\Lights\PointLight.h">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClInclude>
@@ -228,6 +231,9 @@
       <Filter>src\Lazzo\Object\Camera</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\Lights\DirectionalLight.cpp">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Lights\LightManager.cpp">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\Lights\PointLight.cpp">

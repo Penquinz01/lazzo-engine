@@ -2,9 +2,7 @@
 #include <Lazzo.h>
 #include <Lazzo/Primitives/Cube.h>
 #include <Lazzo/Object/Camera/Camera.h>
-#include <Lazzo/Object/Lights/DirectionalLight.h>
-#include <Lazzo/Object/Lights/PointLight.h>
-#include <Lazzo/Object/Lights/SpotLight.h>
+#include <Lazzo/Object/Lights/LightManager.h>
 #include "editor inputs/EditorInputLayer.h"
 
 class SandBox : public Lazzo::Application {
@@ -19,9 +17,14 @@ public:
 		m_Camera.SetFarPlane(100.0f);
 		m_Cube.SetRotation(glm::vec3(30.0f, 45.0f, 0.0f));
 
-		m_DirectionalLight.SetDirection(glm::vec3(-0.4f, -0.7f, -1.0f));
-		m_DirectionalLight.SetColor(glm::vec3(1.0f, 0.95f, 0.9f));
-		m_DirectionalLight.SetIntensity(1.0f);
+		auto& lightManager = Lazzo::Object::Lights::LightManager::GetInstance();
+
+		lightManager.GetDirectionalLight().SetDirection(glm::vec3(-0.4f, -0.7f, -1.0f));
+		lightManager.GetDirectionalLight().SetColor(glm::vec3(1.0f, 0.95f, 0.9f));
+		lightManager.GetDirectionalLight().SetIntensity(1.0f);
+
+		lightManager.AddPointLight();
+		lightManager.AddSpotLight();
 
 		PushLayer(new EditorInputLayer(m_Camera, GetWindow().GetSDLWindow()));
 	}
@@ -30,8 +33,9 @@ public:
 
 protected:
 	void OnRender() override {
-		m_Cube.Draw(m_Camera, m_Lights);
-		m_Cube2->Draw(m_Camera, m_Lights);
+		auto& lightManager = Lazzo::Object::Lights::LightManager::GetInstance();
+		m_Cube.Draw(m_Camera, lightManager.GetAllLights());
+		m_Cube2->Draw(m_Camera, lightManager.GetAllLights());
 	}
 
 	void OnImGuiRender() override {
@@ -39,9 +43,7 @@ protected:
 		m_Cube.DrawUI();
         m_Cube2->DrawUI();
 		m_Camera.DrawUI();
-		m_DirectionalLight.DrawUI();
-		m_PointLight.DrawUI();
-		m_SpotLight.DrawUI();
+		Lazzo::Object::Lights::LightManager::GetInstance().DrawUI();
 		EndRightPanel();
 	}
 
@@ -49,12 +51,6 @@ private:
 	Lazzo::Cube m_Cube;
     std::unique_ptr<Lazzo::Cube> m_Cube2;
 	Lazzo::Object::Camera::Camera m_Camera{};
-	Lazzo::Object::Lights::DirectionalLight m_DirectionalLight;
-	Lazzo::Object::Lights::PointLight m_PointLight;
-	Lazzo::Object::Lights::SpotLight m_SpotLight;
-	std::vector<Lazzo::Object::Lights::Light*> m_Lights = {
-		&m_DirectionalLight, &m_PointLight, &m_SpotLight
-	};
 };
 
  

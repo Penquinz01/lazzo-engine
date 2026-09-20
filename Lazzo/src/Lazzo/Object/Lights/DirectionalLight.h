@@ -3,7 +3,7 @@
 
 namespace Lazzo::Object::Lights {
 
-    class LAZZO_API DirectionalLight : public Light
+    class DirectionalLight : public Light
     {
     public:
         DirectionalLight();

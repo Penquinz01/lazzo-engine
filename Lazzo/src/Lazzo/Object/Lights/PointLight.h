@@ -3,7 +3,7 @@
 
 namespace Lazzo::Object::Lights {
 
-    class LAZZO_API PointLight : public Light
+    class PointLight : public Light
     {
     public:
         PointLight();
