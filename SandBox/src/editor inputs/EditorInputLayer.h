@@ -1,6 +1,7 @@
 #pragma once
 #include <Lazzo/Layers/Layer.h>
 #include <Lazzo/Object/Camera/Camera.h>
+#include <Lazzo/Window/Events/Events.h>
 #include <SDL3/SDL.h>
 
 // Editor-style fly camera input: WASD translates the camera along its local
@@ -16,6 +17,8 @@ public:
     void OnDetach() override {}
     void OnUpdate() override;
 
+    void OnMouseEvent(const Lazzo::Event& event);
+
 private:
     Lazzo::Object::Camera::Camera& m_Camera;
     SDL_Window* m_Window{ nullptr };
@@ -23,4 +26,6 @@ private:
     float m_MouseSensitivity{ 0.15f };
     Uint64 m_LastFrameTime{ 0 };
     bool m_RelativeMouseMode{ false };
+
+
 };

@@ -2,7 +2,7 @@
 #include "Event.h"
 
 namespace Lazzo {
-	class MouseMovedEvent : public Event {
+	class LAZZO_API MouseMovedEvent : public Event {
 	public:
 		MouseMovedEvent(SDL_Event event);
 		float GetX() const;

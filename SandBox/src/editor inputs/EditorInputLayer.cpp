@@ -9,6 +9,20 @@ EditorInputLayer::EditorInputLayer(Lazzo::Object::Camera::Camera& camera, SDL_Wi
     m_LastFrameTime = SDL_GetPerformanceCounter();
 }
 
+void EditorInputLayer::OnMouseEvent(const Lazzo::Event& event)
+{
+    if (event.GetEventType() == Lazzo::EventType::MouseMoved)
+    {
+        const auto& mouseEvent = static_cast<const Lazzo::MouseMovedEvent&>(event);
+        float dx = mouseEvent.GetRelX();
+        float dy = mouseEvent.GetRelY();
+        glm::vec3 rotation = m_Camera.GetRotation();
+        rotation.y += dx * m_MouseSensitivity;
+        rotation.x = glm::clamp(rotation.x - dy * m_MouseSensitivity, -89.0f, 89.0f);
+        m_Camera.SetRotation(rotation);
+    }
+}
+
 void EditorInputLayer::OnUpdate()
 {
     Uint64 now = SDL_GetPerformanceCounter();
@@ -26,15 +40,19 @@ void EditorInputLayer::OnUpdate()
         {
             SDL_SetWindowRelativeMouseMode(m_Window, true);
             m_RelativeMouseMode = true;
+            float discardX = 0.0f, discardY = 0.0f;
+            SDL_GetRelativeMouseState(&discardX, &discardY);
         }
-
-        float dx = 0.0f, dy = 0.0f;
-        SDL_GetRelativeMouseState(&dx, &dy);
+        else
+        {
+            float dx = 0.0f, dy = 0.0f;
+            SDL_GetRelativeMouseState(&dx, &dy);
 
         glm::vec3 rotation = m_Camera.GetRotation();
-        rotation.y += dx * m_MouseSensitivity;
-        rotation.x = glm::clamp(rotation.x - dy * m_MouseSensitivity, -89.0f, 89.0f);
-        m_Camera.SetRotation(rotation);
+            rotation.y += dx * m_MouseSensitivity;
+            rotation.x = glm::clamp(rotation.x - dy * m_MouseSensitivity, -89.0f, 89.0f);
+            m_Camera.SetRotation(rotation);
+        }
     }
     else if (m_RelativeMouseMode)
     {
