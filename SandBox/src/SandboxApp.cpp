@@ -2,6 +2,7 @@
 #include <Lazzo.h>
 #include <Lazzo/Primitives/Cube.h>
 #include <Lazzo/Object/Camera/Camera.h>
+#include <Lazzo/Object/Model/Model.h>
 #include <Lazzo/Object/Lights/LightManager.h>
 #include "editor inputs/EditorInputLayer.h"
 
@@ -16,6 +17,9 @@ public:
 		m_Camera.SetNearPlane(0.1f);
 		m_Camera.SetFarPlane(100.0f);
 		m_Cube.SetRotation(glm::vec3(30.0f, 45.0f, 0.0f));
+
+        model = std::make_unique<Lazzo::Object::Model>("Imp.fbx");
+		
 
 		auto& lightManager = Lazzo::Object::Lights::LightManager::GetInstance();
 
@@ -35,6 +39,7 @@ protected:
 	void OnRender() override {
 		auto& lightManager = Lazzo::Object::Lights::LightManager::GetInstance();
 		m_Cube.Draw(m_Camera, lightManager.GetAllLights());
+		model->Draw(m_Camera, lightManager.GetAllLights());
 		m_Cube2->Draw(m_Camera, lightManager.GetAllLights());
 	}
 
@@ -51,6 +56,7 @@ private:
 	Lazzo::Cube m_Cube;
     std::unique_ptr<Lazzo::Cube> m_Cube2;
 	Lazzo::Object::Camera::Camera m_Camera{};
+	std::unique_ptr<Lazzo::Object::Model> model;
 };
 
  

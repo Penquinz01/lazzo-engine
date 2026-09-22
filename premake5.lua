@@ -91,12 +91,33 @@ postbuildcommands {
 filter "configurations:Debug"
 defines "LZ_DEBUG"
 symbols "On"
+libdirs {
+    "%{Inc_Dir.Assimp}/lib/Debug",
+}
+links {
+    "assimp-vc145-mtd",
+}
+postbuildcommands {
+    ('{COPY} "%{wks.location}/%{Inc_Dir.Assimp}/bin/assimp-vc145-mtd.dll" "%{wks.location}/bin/' .. outputdir .. '/Sandbox"')
+}
 filter "configurations:Release"
 defines "LZ_RELEASE"
 optimize "On"
+links {
+    "assimp-vc145-mt",
+}
+postbuildcommands {
+    ('{COPY} "%{wks.location}/%{Inc_Dir.Assimp}/bin/assimp-vc145-mt.dll" "%{wks.location}/bin/' .. outputdir .. '/Sandbox"')
+}
 filter "configurations:Dist"
 defines "LZ_DIST"
 optimize "On"
+links {
+    "assimp-vc145-mt",
+}
+postbuildcommands {
+    ('{COPY} "%{wks.location}/%{Inc_Dir.Assimp}/bin/assimp-vc145-mt.dll" "%{wks.location}/bin/' .. outputdir .. '/Sandbox"')
+}
 
 filter {}
 project "SandBox"

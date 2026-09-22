@@ -22,7 +22,7 @@ Lazzo/                        Root
 ├── Lazzo/                    Engine shared library project
 │   ├── Lazzo.vcxproj
 │   ├── Shaders/
-│   │   └── OpenGL/           GLSL 460 shaders (Basic.vert, Basic.frag)
+│   │   └── GLSL/            GLSL 460 shaders (Basic.vert, Basic.frag)
 │   └── src/
 │       ├── lzpch.h           Precompiled header (STL + Windows.h)
 │       ├── lzpch.cpp         PCH compilation unit

@@ -20,6 +20,8 @@ namespace Lazzo::Graphics {
         void SetFloat3(const std::string& name, const glm::vec3& value) const { m_Shader->SetFloat3(name, value); }
         void SetFloat4(const std::string& name, const glm::vec4& value) const { m_Shader->SetFloat4(name, value); }
 
+        const Shader& GetShader() const { return *m_Shader; }
+
     private:
         std::unique_ptr<Shader> m_Shader;
     };

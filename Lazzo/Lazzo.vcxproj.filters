@@ -22,6 +22,9 @@
     <Filter Include="src\Lazzo\Object\Lights">
       <UniqueIdentifier>{6C9D5B37-D8D4-A3CE-E1DE-07F24D95CAC7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lazzo\Object\Model">
+      <UniqueIdentifier>{72B78409-5EB1-AD5B-471E-446C33B713C8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Lazzo\Primitives">
       <UniqueIdentifier>{07572136-F3E5-AAFF-9C04-BFFA8872BBA5}</UniqueIdentifier>
     </Filter>
@@ -99,11 +102,20 @@
     <ClInclude Include="src\Lazzo\Object\Lights\LightManager.h">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Lights\LightUniforms.h">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Object\Lights\PointLight.h">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Object\Lights\SpotLight.h">
       <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Model\Mesh.h">
+      <Filter>src\Lazzo\Object\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Model\Model.h">
+      <Filter>src\Lazzo\Object\Model</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Object\Object.h">
       <Filter>src\Lazzo\Object</Filter>
@@ -236,11 +248,20 @@
     <ClCompile Include="src\Lazzo\Object\Lights\LightManager.cpp">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Lights\LightUniforms.cpp">
+      <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lazzo\Object\Lights\PointLight.cpp">
       <Filter>src\Lazzo\Object\Lights</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\Lights\SpotLight.cpp">
       <Filter>src\Lazzo\Object\Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Model\Mesh.cpp">
+      <Filter>src\Lazzo\Object\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Model\Model.cpp">
+      <Filter>src\Lazzo\Object\Model</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp">
       <Filter>src\Lazzo\Object</Filter>

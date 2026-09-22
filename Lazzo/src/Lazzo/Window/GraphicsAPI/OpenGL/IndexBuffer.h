@@ -12,10 +12,9 @@ namespace Lazzo::OpenGL {
         IndexBuffer(const unsigned int* data, unsigned int count);
         ~IndexBuffer();
 
-        void Bind() const;
-        void UnBind() const;
-
-        inline unsigned int getCount() const { return m_Count; }
+        void Bind() const override;
+        void UnBind() const override;
+        unsigned int GetCount() const override { return m_Count; }
     };
 }
 
