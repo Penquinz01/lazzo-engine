@@ -2,7 +2,7 @@
 #include "Event.h"
 
 namespace Lazzo {
-	class KeyDownEvent : public Event {
+	class LAZZO_API KeyDownEvent : public Event {
 	public:
 		KeyDownEvent(SDL_Event event);
 		int ReturnScanCode() const;

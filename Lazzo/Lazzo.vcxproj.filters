@@ -123,6 +123,9 @@
     <ClInclude Include="src\Lazzo\Object\ObjectRenderer.h">
       <Filter>src\Lazzo\Object</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Object\Picking.h">
+      <Filter>src\Lazzo\Object</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Primitives\Cube.h">
       <Filter>src\Lazzo\Primitives</Filter>
     </ClInclude>
@@ -183,6 +186,9 @@
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.h">
       <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Texture.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.h">
       <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
     </ClInclude>
@@ -199,6 +205,9 @@
       <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\ShaderFileData.h">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lazzo\Window\GraphicsAPI\Texture.h">
       <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
     </ClInclude>
     <ClInclude Include="src\Lazzo\Window\GraphicsAPI\VertexArray.h">
@@ -266,6 +275,9 @@
     <ClCompile Include="src\Lazzo\Object\ObjectRenderer.cpp">
       <Filter>src\Lazzo\Object</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Object\Picking.cpp">
+      <Filter>src\Lazzo\Object</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lazzo\Primitives\Cube.cpp">
       <Filter>src\Lazzo\Primitives</Filter>
     </ClCompile>
@@ -290,6 +302,9 @@
     <ClCompile Include="src\Lazzo\Window\Events\MouseScrolledEvent.cpp">
       <Filter>src\Lazzo\Window\Events</Filter>
     </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\Material.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI</Filter>
+    </ClCompile>
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\IndexBuffer.cpp">
       <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
     </ClCompile>
@@ -297,6 +312,9 @@
       <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Shader.cpp">
+      <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\Texture.cpp">
       <Filter>src\Lazzo\Window\GraphicsAPI\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Lazzo\Window\GraphicsAPI\OpenGL\VertexArray.cpp">

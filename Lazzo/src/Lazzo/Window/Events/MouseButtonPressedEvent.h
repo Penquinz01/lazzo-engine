@@ -2,7 +2,7 @@
 #include "Event.h"
 
 namespace Lazzo {
-	class MouseButtonPressedEvent : public Event {
+	class LAZZO_API MouseButtonPressedEvent : public Event {
 	public:
 		MouseButtonPressedEvent(SDL_Event event);
 		int GetButton() const;

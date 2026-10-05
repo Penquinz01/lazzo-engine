@@ -4,6 +4,8 @@
 #include "Window/Window.h"
 #include "Layers/LayerStack.h"
 #include "Layers/Layer.h"
+#include <string>
+#include <vector>
 
 namespace Lazzo
 {
@@ -25,6 +27,13 @@ Application();
 
 		void BeginRightPanel(float width = 300.0f);
 		void EndRightPanel();
+
+		// Inspector helpers (ImGui lives in the DLL, so clients compose
+		// selection UI through these instead of calling ImGui directly).
+		void InspectorSelectableList(const std::vector<std::string>& names, int& selectedIndex);
+		void InspectorEmptyHint();
+		void InspectorTitle(const char* text);
+		bool IsUIMouseCaptured() const;
 
 	private:
 		std::unique_ptr<Window> window{};

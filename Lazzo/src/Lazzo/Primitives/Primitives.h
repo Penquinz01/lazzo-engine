@@ -3,6 +3,7 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "Lazzo/Window/GraphicsAPI/Material.h"
+#include "Lazzo/Object/Picking.h"
 
 namespace Lazzo {
     class Primitives {
@@ -18,6 +19,12 @@ namespace Lazzo {
         glm::vec3 SetScale(const glm::vec3& sc) { scale = sc; return scale; }
         glm::vec3 GetColor() const { return m_Color; }
         glm::vec3 SetColor(const glm::vec3& col) { m_Color = col; return m_Color; }
+        // World-space bounds of the unit cube (+-0.5) under this transform.
+        bool GetWorldAABB(Lazzo::Object::AABB& outBox) const {
+            outBox = Lazzo::Object::TransformAABB(Lazzo::Object::UnitCubeAABB(),
+                Lazzo::Object::BuildModelMatrix(position, rotation, scale));
+            return true;
+        }
     private:
         glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
         glm::vec3 rotation = glm::vec3(0.0f, 0.0f, 0.0f);

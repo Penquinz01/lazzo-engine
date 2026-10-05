@@ -40,4 +40,33 @@ namespace Lazzo
         ImGui::End();
     }
 
+    void Application::InspectorSelectableList(const std::vector<std::string>& names, int& selectedIndex)
+    {
+        for (int i = 0; i < static_cast<int>(names.size()); i++) {
+            ImGui::PushID(i);
+            bool selected = (selectedIndex == i);
+            if (ImGui::Selectable(names[i].c_str(), selected))
+                selectedIndex = selected ? -1 : i;
+            ImGui::PopID();
+        }
+        if (selectedIndex != -1 && ImGui::Button("Deselect"))
+            selectedIndex = -1;
+    }
+
+    void Application::InspectorEmptyHint()
+    {
+        ImGui::TextDisabled("No selection.");
+        ImGui::TextDisabled("Left-click an object in the viewport.");
+    }
+
+    void Application::InspectorTitle(const char* text)
+    {
+        ImGui::SeparatorText(text);
+    }
+
+    bool Application::IsUIMouseCaptured() const
+    {
+        return ImGui::GetIO().WantCaptureMouse;
+    }
+
 }

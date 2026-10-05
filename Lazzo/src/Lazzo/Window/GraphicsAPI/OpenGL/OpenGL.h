@@ -4,3 +4,4 @@
 #include "Shader.h"
 #include "Renderer.h"
 #include "IndexBuffer.h"
+#include "Texture.h"

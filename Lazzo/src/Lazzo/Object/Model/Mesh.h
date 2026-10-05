@@ -30,6 +30,10 @@ namespace Lazzo::Object {
         const glm::vec3& GetColor() const { return m_Color; }
         void SetColor(const glm::vec3& color) { m_Color = color; }
 
+        void SetTexture(Lazzo::Graphics::TextureSlot slot, std::shared_ptr<Lazzo::Graphics::Texture> texture) {
+            m_Material->SetTexture(slot, std::move(texture));
+        }
+
         const std::vector<Vertex>& GetVertices() const { return m_Vertices; }
         const std::vector<unsigned int>& GetIndices() const { return m_Indices; }
 

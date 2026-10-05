@@ -37,6 +37,7 @@ namespace Lazzo::Object {
         m_Material->SetMat4("u_Projection", camera.GetProjectionMatrix());
         m_Material->SetFloat3("u_Color", m_Color);
         m_Material->SetFloat3("u_ViewPos", camera.GetPosition());
+        m_Material->BindTextures();
 
         Lazzo::Object::Lights::SetLightUniforms(*m_Material, lights);
 

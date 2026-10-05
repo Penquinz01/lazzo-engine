@@ -2,7 +2,7 @@
 #include "Event.h"
 
 namespace Lazzo {
-	class MouseScrolledEvent : public Event {
+	class LAZZO_API MouseScrolledEvent : public Event {
 	public:
 		MouseScrolledEvent(SDL_Event event);
 		float GetOffsetX() const;
